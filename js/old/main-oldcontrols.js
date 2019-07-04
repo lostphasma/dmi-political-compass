@@ -14,8 +14,6 @@ renderer.shadowMap.type=THREE.BasicShadowMap;
 ambientLight= new THREE.AmbientLight(0xffffff, 0.2);
 scene.add(ambientLight);
 document.querySelector('#canvas').appendChild(renderer.domElement);
-
-// lights management
 light = new THREE.PointLight(0xffffff, 0.8);
 light.castShadow = true;
 light.shadow.camera.near=0.1;
@@ -26,12 +24,11 @@ scene.add(light);
 // change the order of camera rotation
 camera.rotation.order = "YXZ";
 
-// first person controls (YES!)
+// controls
 var clock = new THREE.Clock();
 var controls = new THREE.FirstPersonControls( camera );
-controls.lookSpeed = 0.2;
+controls.lookSpeed = 0.1;
 
-// matte white material for the spheres
 var material = new THREE.MeshPhongMaterial({
     color: 0xffffff,
     wireframe:false,
@@ -50,16 +47,63 @@ function initGeometry(e) {
         spheres.push(sph);
     }
 }
-// runs the script 
+// -----  runs the script 
 initGeometry();
 
+// var geometry = new THREE.SphereGeometry( 1, 35, 35);
+// var geometry2= new THREE.SphereGeometry( 1, 35, 35);
+// var cube = new THREE.Mesh(geometry, material);
+// var cube2 = new THREE.Mesh(geometry2, material);
+// scene.add(cube);
+// scene.add(cube2);
+// cube.position.z = -50;
+// cube2.position.z = -5;
+// cube2.position.x = 3;
+
+// spheres.push(cube);
+// spheres.push(cube2);
+// console.log(spheres);
+
 renderer.render(scene, camera);
+
+// // ----- Manage camera and light position on the scene
+// var scale = .25;
+// var mouseX = 0;
+// var mouseY = 0;
+
+// document.addEventListener("mousemove", function (e) {
+//     mouseX = - ( e.clientX / renderer.domElement.clientWidth ) * 2 + 1;
+//     mouseY = - ( e.clientY / renderer.domElement.clientHeight ) * 2 + 1;
+
+//     camera.rotation.x = mouseY / scale;
+//     camera.rotation.y = mouseX / scale;
+
+//     var lightdist = 40;
+//     light.position.x = map(e.clientX, 0, window.innerWidth, lightdist, -lightdist);
+//     light.position.y = map(e.clientY, 0, window.innerWidth, -lightdist, lightdist);
+
+//     renderer.render(scene, camera);
+// }, false);
+
+// $('#canvas').on("mousemove", function (e) {
+//     camera.rotation.y = map(e.clientX, 0, window.innerWidth, 0, -360 * Math.PI / 180);
+//     camera.rotation.x = map(e.clientY, 0, window.innerHeight, 0, 360 * Math.PI / 180);
+//     // camera.rotation.x += Math.max(Math.min((e.clientX - mouse.x) * 0.01, cameraMoves.speed), -cameraMoves.speed);
+//     // camera.rotation.y += Math.max(Math.min((mouse.y - e.clientY) * 0.01, cameraMoves.speed), -cameraMoves.speed);
+
+//     var lightdist = 40;
+//     light.position.x = map(e.clientX, 0, window.innerWidth, lightdist, -lightdist);
+//     light.position.y = map(e.clientY, 0, window.innerWidth, -lightdist, lightdist);
+//     renderer.render(scene, camera);
+//     // requestAnimationFrame();
+// }, false);
 
 function map(s, a1, a2, b1, b2) {
     return b1 + (s - a1) * (b2 - b1) / (a2 - a1);
 }
 
-// ----- raycaster to inspect which sphere is hovered by the controller
+
+// ----- con che sfera intereseca
 var raycaster = new THREE.Raycaster();
 var mouse = new THREE.Vector2();
 
@@ -83,7 +127,7 @@ function render() {
 		// calculate objects intersecting the picking ray
 		for ( var i = 0; i < intersects.length; i++ ) {
 
-			if(intersects[i].object.name.includes("Sphere")){
+			if(intersects[i].object.name.includes("Cube") || intersects[i].object.name.includes("FRAME")){
 				intersects[ i ].object.material.color.set( colors[Math.floor(Math.random()*colors.length)] );
             }
             
