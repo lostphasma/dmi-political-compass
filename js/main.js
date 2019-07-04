@@ -1,5 +1,3 @@
-console.log('ciao');
-
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight);
 scene.add(camera);
@@ -13,7 +11,11 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.shadowMap.type=THREE.BasicShadowMap;
 ambientLight= new THREE.AmbientLight(0xffffff, 0.2);
 scene.add(ambientLight);
+
 document.querySelector('#canvas').appendChild(renderer.domElement);
+
+// add domEvents like behaviour
+var domEvents = new THREEx.DomEvents(camera, renderer.domElement)
 
 // lights management
 light = new THREE.PointLight(0xffffff, 0.8);
@@ -35,7 +37,10 @@ var material = new THREE.MeshPhongMaterial({
     shininess: 0
 });
 
-// ----- creates spheres and push them into the spheres array
+
+
+
+// ---------------------------------------- creates spheres and push them into the spheres array
 function initGeometry(e) {
     for (i = 0; i < geometries.length; i++){       
         var geometry = new THREE.SphereGeometry(geometries[i].r, 35, 35);
@@ -47,19 +52,25 @@ function initGeometry(e) {
         spheres.push(sph);
     }
 }
-// runs the script 
 initGeometry();
+console.log(spheres);
 
 renderer.render(scene, camera);
 
+function onMouseMove( event ) {
+    event.preventDefault();
+    mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+    mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+}
 
+window.addEventListener( 'mousemove', onMouseMove, false );
 
-// ----- raycaster to inspect which sphere is hovered by the controller
+// ------------------------------ raycaster to inspect which sphere is hovered by the controller
 var raycaster = new THREE.Raycaster();
-var mouse = new THREE.Vector2();
+var mouse = new THREE.Vector2(), INTERSECTED;
 
 
-
+// ----- Particles
 var material = new THREE.SpriteMaterial({
     map: new THREE.CanvasTexture(generateSprite()),
     blending: THREE.AdditiveBlending
@@ -93,6 +104,16 @@ function initParticle(particle, delay) {
     particle.scale.x = particle.scale.y = 1 + Math.random();
 }
 
+let stop = false;
+
+// ---------------------------------------- dom like behaviour
+// da fare ciclo for per prendere informazioni da data.js e pusharle
+var linkify	= THREEx.Linkify(domEvents, spheres[0], "https://www.youtube.com", true)
+// all'hover fare apparire tooltip con informazioni da datajs
+domEvents.addEventListener(spheres[0], 'mouseover', function(event){
+    
+}, false)
+
 function render() {
 	requestAnimationFrame( render );
     renderer.render( scene, camera );
@@ -101,15 +122,30 @@ function render() {
     controls.update( delta );
     
     // update the picking ray with the camera and mouse position
-    
-        raycaster.setFromCamera( mouse, camera );
-        
-        // console.log(raycaster.intersectObject());
+    raycaster.setFromCamera(mouse, camera);
 
-        var intersects = raycaster.intersectObjects( spheres, true );
-        if(intersects.length > 0) {
-            console.log('ciao');
+    // calculate objects intersecting the picking ray
+    var intersects = raycaster.intersectObjects(spheres);
+    if (intersects.length > 0){
+        
+        if ( INTERSECTED != intersects[ 0 ].object ) {
+            if ( INTERSECTED ) INTERSECTED.material.emissive.setHex( INTERSECTED.currentHex );
+            INTERSECTED = intersects[ 0 ].object;
+            INTERSECTED.currentHex = INTERSECTED.material.emissive.getHex();
+            INTERSECTED.material.emissive.setHex( 0xff0000 );
         }
+    
+    } else if (intersects.length == 0) {
+        for (var i = 0; i < spheres.length; i++) {
+
+            if ( INTERSECTED ) INTERSECTED.material.emissive.setHex( INTERSECTED.currentHex );
+            INTERSECTED = null;
+    
+        }
+    }
+    
+
+    // renderer.render(scene, camera);
 
 		// // calculate objects intersecting the picking ray
 		// for ( var i = 0; i < intersects.length; i++ ) {
@@ -122,4 +158,5 @@ function render() {
         //     // se intersecta l'oggetto numero n (dovrebbero essere in ordine di creazione) allora prendi info da json/js-data/hardcode
         // }
 }
+
 render();
