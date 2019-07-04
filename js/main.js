@@ -84,34 +84,27 @@ function render() {
 
     var intersects = raycaster.intersectObjects( spheres, true );
     if ( intersects.length > 0 ) {
-        if ( INTERSECTED != intersects[ 0 ].object ) {
-            INTERSECTED = intersects [ 0 ];
+        if ( INTERSECTED == null ) {
+            INTERSECTED = intersects [ 0 ].object;
             var newMaterial = new THREE.MeshPhongMaterial({
                 color: 0xffff,
                 wireframe:false,
                 shininess: 0
             });
-            INTERSECTED.object.material = newMaterial;
+            INTERSECTED.material = newMaterial;
         }
     } else {
-        if ( INTERSECTED ) INTERSECTED.object.material = material;
+        if (INTERSECTED != null) {
+            var newMaterial = new THREE.MeshPhongMaterial({
+                color: 0xffffff,
+                wireframe:false,
+                shininess: 0
+            });
+            INTERSECTED.material = newMaterial;
+        }
         INTERSECTED = null;    
     }
     renderer.render( scene, camera );
-
-
-    // renderer.render(scene, camera);
-
-		// // calculate objects intersecting the picking ray
-		// for ( var i = 0; i < intersects.length; i++ ) {
-
-		// 	if(intersects[i].object.name.includes("Sphere")){
-		// 		intersects[ i ].object.material.color.set( colors[Math.floor(Math.random()*colors.length)] );
-        //     }
-        
-            
-        //     // se intersecta l'oggetto numero n (dovrebbero essere in ordine di creazione) allora prendi info da json/js-data/hardcode
-        // }
 }
 
 render();
