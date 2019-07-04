@@ -28,23 +28,6 @@ var mobileControls = new THREE.DeviceOrientationControls( camera );
 var isMobile;
 
 
-/// TOUCH EVENTS \\\
-// document.addEventListener('touchstart', function(e){
-//   mouseX = ( e.touches[0].clientX - windowHalfX ) / 2;
-//   mouseY = ( e.touches[0].clientY - windowHalfY ) / 2;
-// }, false);
-// document.addEventListener('touchmove', function(e){
-//   e.preventDefault();
-//   mouseX = ( e.touches[0].clientX - windowHalfX ) / 2;
-//   mouseY = ( e.touches[0].clientY - windowHalfY ) / 2;
-// }, false);
-// document.body.addEventListener('touchend', function(e){
-//   if (e.touches && e.touches[0]) {
-//     mouseX = ( e.touches[0].clientX - windowHalfX ) / 2;
-//     mouseY = ( e.touches[0].clientY - windowHalfY ) / 2;
-//   }
-// }, false);
-
 init();
 
 function init() {
