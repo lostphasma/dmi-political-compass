@@ -64,13 +64,16 @@ function onMouseMove( event ) {
 
 document.addEventListener( 'mousemove', onMouseMove, false );
 
-// // ---------------------------------------- dom like behaviour
-// // da fare ciclo for per prendere informazioni da data.js e pusharle
-// var linkify	= THREEx.Linkify(domEvents, spheres[0], "https://www.youtube.com", true)
-// // all'hover fare apparire tooltip con informazioni da datajs
-// domEvents.addEventListener(spheres[0], 'mouseover', function(event){
-//     // tutte cose
-// }, false)
+// ---------------------------------------- dom like behaviour
+// da fare ciclo for per prendere informazioni da data.js e pusharle
+var linkify	= THREEx.Linkify(domEvents, spheres[1], "https://www.youtube.com", false)
+// all'hover fare apparire tooltip con informazioni da datajs
+domEvents.addEventListener(spheres[0], 'mouseover', function(event){
+    document.getElementById("tooltip").classList.add("summon");
+}, false)
+domEvents.addEventListener(spheres[0], 'mouseout', function(event){
+    document.getElementById("tooltip").classList.remove("summon");
+}, false)
 
 function render() {
 	requestAnimationFrame( render );
@@ -87,7 +90,7 @@ function render() {
         if ( INTERSECTED == null ) {
             INTERSECTED = intersects [ 0 ].object;
             var newMaterial = new THREE.MeshPhongMaterial({
-                color: 0xffff,
+                color: 0xff0000,
                 wireframe:false,
                 shininess: 0
             });
