@@ -16,8 +16,8 @@ function generateSprite() {
     canvas.height = 32;
     var context = canvas.getContext('2d');
     var gradient = context.createRadialGradient(canvas.width / 2, canvas.height / 2, 0, canvas.width / 2, canvas.height / 2, canvas.width / 2);
-    gradient.addColorStop(0, 'rgba(255,255,255,.3)');
-    gradient.addColorStop(0.1, 'rgba(255,255,255,.3)');
+    gradient.addColorStop(0, 'rgba(255,255,255,.2)');
+    gradient.addColorStop(0.1, 'rgba(255,255,255,.2)');
     gradient.addColorStop(0.4, 'rgba(0,0,0,1)');
     gradient.addColorStop(0.5, 'rgba(0,0,0,1)');
     context.fillStyle = gradient;

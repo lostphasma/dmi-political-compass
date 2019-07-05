@@ -66,14 +66,32 @@ document.addEventListener( 'mousemove', onMouseMove, false );
 
 // ---------------------------------------- dom like behaviour
 // da fare ciclo for per prendere informazioni da data.js e pusharle
-var linkify	= THREEx.Linkify(domEvents, spheres[1], "https://www.youtube.com", false)
-// all'hover fare apparire tooltip con informazioni da datajs
-domEvents.addEventListener(spheres[0], 'mouseover', function(event){
-    document.getElementById("tooltip").classList.add("summon");
-}, false)
-domEvents.addEventListener(spheres[0], 'mouseout', function(event){
-    document.getElementById("tooltip").classList.remove("summon");
-}, false)
+for (i = 0; i < spheres.length; i++) {
+    console.log(i);
+    var url = geometries[i].url;
+    var linkify	= THREEx.Linkify(domEvents, spheres[i], url, false)
+
+    var counter = i;
+    (function (i) {
+        var title = geometries [i].title
+        var content = geometries[i].content;
+        var img = geometries[i].imageName;
+        // <img src="assets/image-name-1.jpg">
+        domEvents.addEventListener(spheres[i], 'mouseover', function(event){
+            var tooltip = document.getElementById("tooltip");
+            tooltip.innerHTML = "<h1>" + title + "</h1>" + "</br>" + content + "<img src='assets/" + img + "'>";
+            tooltip.classList.add("summon");
+        }, false)
+    }).call(this,i)
+
+    domEvents.addEventListener(spheres[i], 'mouseout', function(event){
+        document.getElementById("tooltip").classList.remove("summon");
+    }, false)
+
+}
+
+
+
 
 function render() {
 	requestAnimationFrame( render );

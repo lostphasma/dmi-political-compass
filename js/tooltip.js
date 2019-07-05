@@ -13,10 +13,10 @@ function updateTooltipPos(e, el) {
     var x = e.clientX;
     var y = e.clientY;
 
-    elWidth = el.getBoundingClientRect().width + 20;
+    elWidth = el.getBoundingClientRect().width + 40;
     elLeft = el.getBoundingClientRect().left;
 
-    elHeight = el.getBoundingClientRect().height + 20;
+    elHeight = el.getBoundingClientRect().height + 200; // was +20
     elBottom = el.getBoundingClientRect().bottom;
 
     clientHeight = document.documentElement.clientHeight;
