@@ -25,7 +25,7 @@ light = new THREE.PointLight(0xffffff, 0.8);
 light.castShadow = true;
 light.shadow.camera.near=0.1;
 light.shadow.camera.far=25;
-light.position.x = 30;
+light.position.x = light.position.y = light.position.z = 0;
 scene.add(light);
 
 // first person controls (YES!)
@@ -40,8 +40,36 @@ var material = new THREE.MeshPhongMaterial({
     shininess: 0
 });
 
+var redMaterial = new THREE.MeshLambertMaterial({
+    emissive: 0xff0000,
+    emissiveIntensity: .5,
+    reflecticity: 0,
+    wireframe:false,
+    shininess: 0
+});
+
 // ---------------------------------------- creates spheres and push them into the spheres array
 function initGeometry(e) {
+    // create the external cube
+    
+	var path = "assets/maps/";
+	var format = '.jpg';
+	var urls = [
+	    path + 'posx' + format, path + 'negx' + format,
+	    path + 'posy' + format, path + 'negy' + format,
+	    path + 'posz' + format, path + 'negz' + format
+	];
+	var reflectionCube = new THREE.CubeTextureLoader().load(urls);
+	scene.background = reflectionCube;
+
+    // insert red cube in origin
+    var boxDimensions = .2;
+    var origin = new THREE.BoxGeometry(boxDimensions, boxDimensions, boxDimensions);
+    var originBox = new THREE.Mesh(origin, redMaterial);
+    scene.add(originBox);
+
+
+    // create the spheres, to add more spheres edit the data.js file
     for (i = 0; i < geometries.length; i++){       
         var geometry = new THREE.SphereGeometry(geometries[i].r, 35, 35);
         var sph = new THREE.Mesh(geometry, material);
@@ -89,8 +117,6 @@ for (i = 0; i < spheres.length; i++) {
     }, false)
 
 }
-
-
 
 
 function render() {

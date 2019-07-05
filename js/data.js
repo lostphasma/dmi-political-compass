@@ -1,7 +1,7 @@
 var geometries = [{
     r: 1,
     x: 0,
-    y: 0,
+    y: 3,
     z: -50,
     url: "https://www.youtube.com",
     title: "Title 1 here",
@@ -10,7 +10,7 @@ var geometries = [{
 },{
     r: 1,
     x: 3,
-    y: 0,
+    y: 10,
     z: -20,
     url: "https://www.youtube.com",
     title: "Title 2 here",
