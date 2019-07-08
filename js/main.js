@@ -31,7 +31,7 @@ scene.add(light);
 // first person controls (YES!)
 var clock = new THREE.Clock();
 var controls = new THREE.FirstPersonControls( camera );
-controls.lookSpeed = 0.2;
+controls.lookSpeed = 0.1;
 
 // matte white material for the spheres
 var material = new THREE.MeshPhongMaterial({
