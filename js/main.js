@@ -33,13 +33,6 @@ var clock = new THREE.Clock();
 var controls = new THREE.FirstPersonControls( camera );
 controls.lookSpeed = 0.1;
 
-// matte white material for the spheres
-var material = new THREE.MeshPhongMaterial({
-    color: 0xffffff,
-    wireframe:false,
-    shininess: 0
-});
-
 var redMaterial = new THREE.MeshLambertMaterial({
     emissive: 0xff0000,
     emissiveIntensity: .5,
@@ -68,16 +61,21 @@ function initGeometry(e) {
     var originBox = new THREE.Mesh(origin, redMaterial);
     scene.add(originBox);
 
+    var loader = new THREE.TextureLoader();
 
     // create the spheres, to add more spheres edit the data.js file
-    for (i = 0; i < geometries.length; i++){       
+    for (i = 0; i < geometries.length; i++){     
+
+        var texture = new THREE.TextureLoader().load( 'assets/' + geometries[i].planet_texture);
         var geometry = new THREE.SphereGeometry(geometries[i].r, 35, 35);
+        var material = new THREE.MeshLambertMaterial( { map: texture } );
         var sph = new THREE.Mesh(geometry, material);
         scene.add(sph);
         sph.position.x = geometries[i].x;
         sph.position.y = geometries[i].y;
         sph.position.z = geometries[i].z;
         spheres.push(sph);
+
     }
 }
 initGeometry();
@@ -95,7 +93,7 @@ document.addEventListener( 'mousemove', onMouseMove, false );
 // ---------------------------------------- dom like behaviour
 // da fare ciclo for per prendere informazioni da data.js e pusharle
 for (i = 0; i < spheres.length; i++) {
-    console.log(i);
+
     var url = geometries[i].url;
     var linkify	= THREEx.Linkify(domEvents, spheres[i], url, false)
 
@@ -104,10 +102,14 @@ for (i = 0; i < spheres.length; i++) {
         var title = geometries [i].title
         var content = geometries[i].content;
         var img = geometries[i].imageName;
-        // <img src="assets/image-name-1.jpg">
+
         domEvents.addEventListener(spheres[i], 'mouseover', function(event){
             var tooltip = document.getElementById("tooltip");
-            tooltip.innerHTML = "<h1>" + title + "</h1>" + "</br>" + content + "<img src='assets/" + img + "'>";
+            // Add main info
+            tooltip_content =  "<h1>" + title + "</h1>" + "</br>" + content + "<img src='assets/" + img + "'>";
+            
+            tooltip.innerHTML = tooltip_content
+
             tooltip.classList.add("summon");
         }, false)
     }).call(this,i)
@@ -123,18 +125,19 @@ function render() {
 	requestAnimationFrame( render );
     renderer.render( scene, camera );
     
-    // update della camera
+    // update the camera
     controls.update(clock.getDelta());
     
     // update the picking ray with the camera and mouse position
     raycaster.setFromCamera(mouse, camera);
 
     var intersects = raycaster.intersectObjects( spheres, true );
-    if ( intersects.length > 0 ) {
+    /*if ( intersects.length > 0 ) {
         if ( INTERSECTED == null ) {
             INTERSECTED = intersects [ 0 ].object;
+            console.log(INTERSECTED)
             var newMaterial = new THREE.MeshPhongMaterial({
-                color: 0xff0000,
+                
                 wireframe:false,
                 shininess: 0
             });
@@ -143,14 +146,14 @@ function render() {
     } else {
         if (INTERSECTED != null) {
             var newMaterial = new THREE.MeshPhongMaterial({
-                color: 0xffffff,
+                
                 wireframe:false,
                 shininess: 0
             });
             INTERSECTED.material = newMaterial;
         }
         INTERSECTED = null;    
-    }
+    }*/
     renderer.render( scene, camera );
 }
 

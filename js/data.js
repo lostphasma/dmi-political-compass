@@ -6,7 +6,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Social_justice_warrior",
     title: "SJWs (Social Justice Warriors)",
     content: "Trigger warning please",
-    imageName: "SJWs.png"
+    imageName: "SJWs.png",
+    planet_texture: "SJWs.png"
  },{
     r: 1,
     x: 60,
@@ -15,7 +16,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Animal_rights_movement",
     title: "Animal Rights Activists",
     content: "Animal Rights = Human Rights",
-    imageName: "Animal Rights Activists.jpg"
+    imageName: "Animal Rights Activists.jpg",
+    planet_texture: "Animal Rights Activists.jpg"
  },{
     r: 1,
     x: 67,
@@ -24,7 +26,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Black_Lives_Matter",
     title: "Black Lives Matter",
     content: "Hand's Up, Don't Shoot ",
-    imageName: "Black Lives Matter.png"
+    imageName: "Black Lives Matter.png",
+    planet_texture: "Black Lives Matter.png"
  },{
     r: 1,
     x: 80,
@@ -33,7 +36,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Me_Too_movement",
     title: "#MeToo",
     content: "Time's Up",
-    imageName: "MeToo.jpg"
+    imageName: "MeToo.jpg",
+    planet_texture: "MeToo.jpg"
  },{
     r: 1,
     x: 40,
@@ -42,7 +46,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Fourth-wave_feminism",
     title: "4th Wave Feminist",
     content: "No feminism without intersectionalism ",
-    imageName: "4th Wave Feminist.jpg"
+    imageName: "4th Wave Feminist.jpg",
+    planet_texture: "4th Wave Feminist.jpg"
  },{
     r: 1,
     x: 5,
@@ -51,7 +56,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Angela_Davis",
     title: "PoC Radical Feminist  ",
     content: "Angela Davis",
-    imageName: "PoC Radical Feminist.jpg"
+    imageName: "PoC Radical Feminist.jpg",
+    planet_texture: "PoC Radical Feminist.jpg"
  },{
     r: 1,
     x: 75,
@@ -60,7 +66,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/LGBT",
     title: "LGBT",
     content: "All love is equal",
-    imageName: "LGBT.png"
+    imageName: "LGBT.png",
+    planet_texture: "LGBT.png"
  },{
     r: 1,
     x: 30,
@@ -69,7 +76,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Social_construction_of_gender",
     title: "Gender Deconstructionists",
     content: "Gender is a social construct",
-    imageName: "Gender Deconstructionists.png"
+    imageName: "Gender Deconstructionists.png",
+    planet_texture: "Gender Deconstructionists.png"
  },{
     r: 1,
     x: 30,
@@ -78,7 +86,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Radical_feminism",
     title: "Gender-Critical Feminists",
     content: "Gender is not a social construct",
-    imageName: "Gender-Critical Feminists.png"
+    imageName: "Gender-Critical Feminists.png",
+    planet_texture: "Gender-Critical Feminists.png"
  },{
     r: 1,
     x: -40,
@@ -87,7 +96,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Queer_anarchism",
     title: "Queer anarchists",
     content: "Gender is state oppression",
-    imageName: "Queer anarchists.png"
+    imageName: "Queer anarchists.png",
+    planet_texture: "Queer anarchists.png"
  },{
     r: 1,
     x: 50,
@@ -96,7 +106,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Neo-Marxism",
     title: "Neo-Marxists",
     content: "Workers of the world, re-unite!",
-    imageName: "Neo-Marxists.png"
+    imageName: "Neo-Marxists.png",
+    planet_texture: "Neo-Marxists.png"
  },{
     r: 1,
     x: 75,
@@ -105,7 +116,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Antifa_(United_States)",
     title: "Antifa",
     content: "NAZIS RAUS",
-    imageName: "Antifa.jpg"
+    imageName: "Antifa.jpg",
+    planet_texture: "Antifa.jpg"
  },{
     r: 1,
     x: 50,
@@ -114,7 +126,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Occupy_movement",
     title: "Occupy",
     content: "We are the 99%",
-    imageName: "Occupy.jpg"
+    imageName: "Occupy.jpg",
+    planet_texture: "Occupy.jpg"
  },{
     r: 1,
     x: -20,
@@ -123,7 +136,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Chapo_Trap_House",
     title: "Dirtbag Left",
     content: "\"That's praxis\" (alternate: posting is praxis)",
-    imageName: "Dirtbag Left.jpg"
+    imageName: "Dirtbag Left.jpg",
+    planet_texture: "Dirtbag Left.jpg"
  },{
     r: 1,
     x: 20,
@@ -132,7 +146,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Democratic_Socialists_of_America",
     title: "DSA (Democratic Socialists of America)",
     content: "Bernie would have won ",
-    imageName: "DSA.jpg"
+    imageName: "DSA.jpg",
+    planet_texture: "DSA.jpg"
  },{
     r: 1,
     x: 90,
@@ -141,7 +156,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)",
     title: "Establishment Left",
     content: "Still with her.",
-    imageName: "Establishment Left.jpg"
+    imageName: "Establishment Left.jpg",
+    planet_texture: "Establishment Left.jpg"
  },{
     r: 1,
     x: -70,
@@ -150,7 +166,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Communist_Party_of_Great_Britain#Tankie",
     title: "Tankies",
     content: "Stalin did nothing wrong",
-    imageName: "Tankies.png"
+    imageName: "Tankies.png",
+    planet_texture: "Tankies.png"
  },{
     r: 1,
     x: 95,
@@ -159,7 +176,8 @@ var geometries = [{
     url: "https://twitter.com/BillGates/status/1086662632587907072?ref_src=twsrc%5Etfw",
     title: "Neo-Panglossians",
     content: "I've got a good feeling about this!",
-    imageName: "Neo-Panglossians.jpg"
+    imageName: "Neo-Panglossians.jpg",
+    planet_texture: "Neo-Panglossians.jpg"
  },{
     r: 1,
     x: 0,
@@ -168,7 +186,8 @@ var geometries = [{
     title: "New Atheists",
     url: "https://en.wikipedia.org/wiki/New_Atheism",
     content: "In this moment, I am euphoric. Not because of any phony god's blessing. But because, I am enlightened by my intelligencey intelligence",
-    imageName: "New Atheists.jpg"
+    imageName: "New Atheists.jpg",
+    planet_texture: "New Atheists.jpg"
  },{
     r: 1,
     x: -35,
@@ -177,7 +196,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Epistemology#Street",
     title: "Street Epistemologists",
     content: "Socrates.",
-    imageName: "Street Epistemologists.jpg"
+    imageName: "Street Epistemologists.jpg",
+    planet_texture: "Street Epistemologists.jpg"
  },{
     r: 1,
     x: -15,
@@ -186,7 +206,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Rationalism",
     title: "Rationalist Diaspora",
     content: "What would Bayes do?",
-    imageName: "Rationalist Diaspora.png"
+    imageName: "Rationalist Diaspora.png",
+    planet_texture: "Rationalist Diaspora.png"
  },{
     r: 1,
     x: -30,
@@ -195,7 +216,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Integral_theory_(Ken_Wilber)",
     title: "Integral Theorists",
     content: "It's all connected, man",
-    imageName: "Integral Theorists.jpg"
+    imageName: "Integral Theorists.jpg",
+    planet_texture: "Integral Theorists.jpg"
  },{
     r: 1,
     x: 25,
@@ -204,7 +226,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Jordan_Peterson",
     title: "Sorters",
     content: "🐸 Lobsters are hierarchical!",
-    imageName: "Sorters.jpg"
+    imageName: "Sorters.jpg",
+    planet_texture: "Sorters.jpg"
  },{
     r: 1,
     x: 12,
@@ -213,7 +236,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Intellectual_dark_web",
     title: "Intellectual Dark Web",
     content: "Debate me",
-    imageName: "Intellectual Dark Web.png"
+    imageName: "Intellectual Dark Web.png",
+    planet_texture: "Intellectual Dark Web.png"
  },{
     r: 1,
     x: -45,
@@ -222,7 +246,8 @@ var geometries = [{
     url: "https://oilab.eu/deus-vult-tracing-the-many-misuses-of-a-meme/",
     title: "Crusaders",
     content: "Deus vult",
-    imageName: "Crusaders.png"
+    imageName: "Crusaders.png",
+    planet_texture: "Crusaders.png"
  },{
     r: 1,
     x: -20,
@@ -231,7 +256,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Modern_Paganism",
     title: "Neo-Paganists",
     content: "Witchcraft, with more crystals and less brooms ",
-    imageName: "Neo-Paganists.jpg"
+    imageName: "Neo-Paganists.jpg",
+    planet_texture: "Neo-Paganists.jpg"
  },{
     r: 1,
     x: -5,
@@ -240,7 +266,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Heathenry_(new_religious_movement)",
     title: "Odinism",
     content: "I am a white supremacist",
-    imageName: "Odinism.jpg"
+    imageName: "Odinism.jpg",
+    planet_texture: "Odinism.jpg"
  },{
     r: 1,
     x: 95,
@@ -249,7 +276,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Christian_right",
     title: "Christian Right",
     content: "What would Jesus do?",
-    imageName: "Christian Right.jpg"
+    imageName: "Christian Right.jpg",
+    planet_texture: "Christian Right.jpg"
  },{
     r: 1,
     x: 55,
@@ -258,7 +286,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Libertarianism",
     title: "Libertarians",
     content: "Anarcho-capitalism for the 1%",
-    imageName: "Libertarians.png"
+    imageName: "Libertarians.png",
+    planet_texture: "Libertarians.png"
  },{
     r: 1,
     x: 87,
@@ -267,7 +296,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Republican_Party_(United_States)",
     title: "Establishment Right",
     content: "Please clap",
-    imageName: "Establishment Right.png"
+    imageName: "Establishment Right.png",
+    planet_texture: "Establishment Right.png"
  },{
     r: 1,
     x: 82,
@@ -276,7 +306,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Tea_Party_movement",
     title: "Tea Party",
     content: "more like oBUMMER",
-    imageName: "Tea Party.png"
+    imageName: "Tea Party.png",
+    planet_texture: "Tea Party.png"
  },{
     r: 1,
     x: -25,
@@ -285,7 +316,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Political_positions_of_Donald_Trump",
     title: "Trumpists",
     content: "Make America Great Again",
-    imageName: "Trumpists.jpg"
+    imageName: "Trumpists.jpg",
+    planet_texture: "Trumpists.jpg"
  },{
     r: 1,
     x: -55,
@@ -294,7 +326,8 @@ var geometries = [{
     title: "InfoWarriors",
     url: "https://en.wikipedia.org/wiki/InfoWars",
     content: "Everything I don't like is a false flag - alternatively: \"they're putting chemicals in the water that turn the friggin' frogs gay.\"e friggin' frogs gay.",
-    imageName: "InfoWarriors.png"
+    imageName: "InfoWarriors.png",
+    planet_texture: "InfoWarriors.png"
  },{
     r: 1,
     x: -65,
@@ -303,7 +336,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/QAnon",
     title: "QAnoners",
     content: "Where we go one we go all ",
-    imageName: "QAnoners.jpg"
+    imageName: "QAnoners.jpg",
+    planet_texture: "QAnoners.jpg"
  },{
     r: 1,
     x: 45,
@@ -312,7 +346,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Alt-lite",
     title: "Alt-Lite",
     content: "Triggered, libtard? ",
-    imageName: "Alt-Lite.jpg"
+    imageName: "Alt-Lite.jpg",
+    planet_texture: "Alt-Lite.jpg"
  },{
     r: 1,
     x: 10,
@@ -321,7 +356,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Alt-right",
     title: "Alt-Right",
     content: "Dress well and hate things",
-    imageName: "Alt-Right.jpg"
+    imageName: "Alt-Right.jpg",
+    planet_texture: "Alt-Right.jpg"
  },{
     r: 1,
     x: 90,
@@ -330,7 +366,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Neo-Nazism",
     title: "Modern Neo-Nazis",
     content: "We must secure the existence of our people and a future for white children",
-    imageName: "Modern Neo-Nazis.png"
+    imageName: "Modern Neo-Nazis.png",
+    planet_texture: "Modern Neo-Nazis.png"
  },{
     r: 1,
     x: -80,
@@ -339,7 +376,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Gamergate_controversy",
     title: "Neoreactionaries",
     content: "\"I no longer believe that freedom and democracy are compatible\"?",
-    imageName: "Neoreactionaries.jpg"
+    imageName: "Neoreactionaries.jpg",
+    planet_texture: "Neoreactionaries.jpg"
  },{
     r: 1,
     x: -30,
@@ -348,7 +386,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Gamergate_controversy",
     title: "Gamergaters",
     content: "Get your politics out of my video games",
-    imageName: "Gamergaters.jpg"
+    imageName: "Gamergaters.jpg",
+    planet_texture: "Gamergaters.jpg"
  },{
     r: 1,
     x: 20,
@@ -357,7 +396,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Men%27s_rights_movement",
     title: "MRA (Mens Right Advocates)",
     content: "Men have rights too! ",
-    imageName: "MRA.jpg"
+    imageName: "MRA.jpg",
+    planet_texture: "MRA.jpg"
  },{
     r: 1,
     x: -30,
@@ -366,7 +406,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Manosphere",
     title: "The Red Pill",
     content: "Down the misogynist rabbit hole",
-    imageName: "The Red Pill.png"
+    imageName: "The Red Pill.png",
+    planet_texture: "The Red Pill.png"
  },{
     r: 1,
     x: -10,
@@ -375,7 +416,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Men_Going_Their_Own_Way",
     title: "MGTOW (Men Going Their Own Way)",
     content: "Lesbian separatism, but for men (but no homo)",
-    imageName: "MGTOW.png"
+    imageName: "MGTOW.png",
+    planet_texture: "MGTOW.png"
  },{
     r: 1,
     x: -60,
@@ -384,7 +426,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Incel",
     title: "Incels",
     content: "Forever alone",
-    imageName: "Incels.png"
+    imageName: "Incels.png",
+    planet_texture: "Incels.png"
  },{
     r: 1,
     x: -75,
@@ -393,7 +436,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Anarcho-communism",
     title: "Anarcho-communism",
     content: "Whats mine is yours",
-    imageName: "Anarcho-communism.png"
+    imageName: "Anarcho-communism.png",
+    planet_texture: "Anarcho-communism.png"
  },{
     r: 1,
     x: -90,
@@ -402,7 +446,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Anarcho-primitivism",
     title: "Anarcho-primitivism",
     content: "Luddism for anarchists",
-    imageName: "Anarcho-primitivism.jpg"
+    imageName: "Anarcho-primitivism.jpg",
+    planet_texture: "Anarcho-primitivism.jpg"
  },{
     r: 1,
     x: -60,
@@ -411,7 +456,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Anarchist_schools_of_thought#Anarcho-transhumanism",
     title: "Anarcho-transhumanism",
     content: "I want to be a computer (if we were all computers, we'd finally be equal)",
-    imageName: "Anarcho-transhumanism.jpg"
+    imageName: "Anarcho-transhumanism.jpg",
+    planet_texture: "Anarcho-transhumanism.jpg"
  },{
     r: 1,
     x: -55,
@@ -420,7 +466,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Anarcho-capitalism",
     title: "Anarcho-capitalism",
     content: "\"I was beat up by left anarchists in Greece. (self.Anarcho_Capitalism)\"",
-    imageName: "Anarcho-capitalism.jpg"
+    imageName: "Anarcho-capitalism.jpg",
+    planet_texture: "Anarcho-capitalism.jpg"
  },{
     r: 1,
     x: -15,
@@ -429,7 +476,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Anarcho-syndicalism",
     title: "Anarcho-syndicalist ",
     content: "Workers of the world, unite! (but not too much)",
-    imageName: "Anarcho-syndicalist .png"
+    imageName: "Anarcho-syndicalist .png",
+    planet_texture: "Anarcho-syndicalist .png"
  },{
     r: 1,
     x: -62,
@@ -438,7 +486,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Agorism",
     title: "Agorists",
     content: "What if everything was bought and sold like drugs?",
-    imageName: "Agorists.jpg"
+    imageName: "Agorists.jpg",
+    planet_texture: "Agorists.jpg"
  },{
     r: 1,
     x: -42,
@@ -447,7 +496,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Anarcho-pacifism",
     title: "Anarcho-pacifists ",
     content: "uwu wevowution pwease? (don't hit me)",
-    imageName: "Anarcho-pacifists .jpg"
+    imageName: "Anarcho-pacifists .jpg",
+    planet_texture: "Anarcho-pacifists .jpg"
  },{
     r: 1,
     x: -10,
@@ -456,7 +506,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Mutualism_(movement)",
     title: "Mutualists (also anarcho-mututalists) ",
     content: "It's free real estate",
-    imageName: "Mutualists (also anarcho-mututalists) .jpg"
+    imageName: "Mutualists (also anarcho-mututalists) .jpg",
+    planet_texture: "Mutualists (also anarcho-mututalists) .jpg"
  },{
     r: 1,
     x: -30,
@@ -465,7 +516,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Anarcha-feminism",
     title: "Anarcha-feminists",
     content: "Patriarchy dies with the state ",
-    imageName: "Anarcha-feminists.jpg"
+    imageName: "Anarcha-feminists.jpg",
+    planet_texture: "Anarcha-feminists.jpg"
  },{
     r: 1,
     x: -77,
@@ -474,7 +526,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Egoism",
     title: "Egoism",
     content: "Everything I don't like is a spook. ",
-    imageName: "Egoism.png"
+    imageName: "Egoism.png",
+    planet_texture: "Egoism.png"
  },{
     r: 1,
     x: -85,
@@ -483,7 +536,8 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/Anarcho-individualism",
     title: "Anarcho-individualism",
     content: "Revolution? More like self-evolution.",
-    imageName: "Anarcho-individualism.jpg"
+    imageName: "Anarcho-individualism.jpg",
+    planet_texture: "Anarcho-individualism.jpg"
  },{
     r: 1,
     x: -60,
@@ -492,7 +546,8 @@ var geometries = [{
     url: "https://jacobitemag.com/2017/05/25/a-quick-and-dirty-introduction-to-accelerationism/",
     title: "Unconditional Accellerationism",
     content: "The only way out is through",
-    imageName: "Unconditional Accellerationism.jpg"
+    imageName: "Unconditional Accellerationism.jpg",
+    planet_texture: "Unconditional Accellerationism.jpg"
  },{
     r: 1,
     x: -20,
@@ -501,7 +556,8 @@ var geometries = [{
     url: "https://www.laboriacuboniks.net/",
     title: "Xenofemism/G-Acc",
     content: "If nature is unjust, change nature.",
-    imageName: "XenofemismG-Acc.png"
+    imageName: "XenofemismG-Acc.png",
+    planet_texture: "XenofemismG-Acc.png"
  },{
     r: 1,
     x: -45,
@@ -510,6 +566,7 @@ var geometries = [{
     url: "http://criticallegalthinking.com/2013/05/14/accelerate-manifesto-for-an-accelerationist-politics/",
     title: "Left Accelerationism",
     content: "Fully Automated Luxury Communism",
-    imageName: "Left Accelerationism.jpg"
+    imageName: "Left Accelerationism.jpg",
+    planet_texture: "Left Accelerationism.jpg"
     },
  ]
