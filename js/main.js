@@ -44,7 +44,6 @@ var redMaterial = new THREE.MeshLambertMaterial({
 // ---------------------------------------- creates spheres and push them into the spheres array
 function initGeometry(e) {
     // create the external cube
-    
 	var path = "assets/maps/";
 	var format = '.jpg';
 	var urls = [
@@ -52,10 +51,10 @@ function initGeometry(e) {
 	    path + 'posy' + format, path + 'negy' + format,
 	    path + 'posz' + format, path + 'negz' + format
 	];
-	var reflectionCube = new THREE.CubeTextureLoader().load(urls);
-	scene.background = reflectionCube;
 
     // insert red cube in origin
+	var reflectionCube = new THREE.CubeTextureLoader().load(urls);
+	scene.background = reflectionCube;
     var boxDimensions = .2;
     var origin = new THREE.BoxGeometry(boxDimensions, boxDimensions, boxDimensions);
     var originBox = new THREE.Mesh(origin, redMaterial);
@@ -63,10 +62,48 @@ function initGeometry(e) {
 
     var loader = new THREE.TextureLoader();
 
+    // Add random gifs in the universe
+    for (i = 0; i < 12; i++) {
+
+        var map = new THREE.TextureLoader().load("assets/space_img/" + i + ".gif");
+        var material = new THREE.SpriteMaterial( { map: map, color: 0xffffff } );
+        var sprite = new THREE.Sprite( material );
+
+        max = 100
+        min = -100
+
+        x = Math.floor(Math.random() * (+max - +min) + +min) * 5;
+        y = Math.floor(Math.random() * (+max - +min) + +min) * 5;
+        z = Math.floor(Math.random() * (+max - +min) + +min) * 5;
+        
+        sprite.scale.set(50, 50*.75, 1);
+        
+        sprite.position.set(x, y, z)
+        scene.add(sprite);
+    }
+
+    // Add nebula images per corner
+    var nebula_coordinates = [[-2000,0,0],[0,-2000,0],[0,0,-2000],[2000,0,0],[0,2000,0],[0,0,2000]]
+
+    for (i = 0; i < 5; i++) {
+
+        var map = new THREE.TextureLoader().load("assets/nebulas/" + (i + 1) + ".png");
+        var material = new THREE.SpriteMaterial( { map: map, color: 0xffffff } );
+        var sprite = new THREE.Sprite( material );
+        
+        sprite.scale.set(3000, 3000*.75, 1);
+        
+        sprite.position.set(nebula_coordinates[i][0], nebula_coordinates[i][1], nebula_coordinates[i][2]);
+
+        // Make sure all the combinations of coordinates are looped through
+
+        scene.add(sprite);
+    }
+
     // create the spheres, to add more spheres edit the data.js file
     for (i = 0; i < geometries.length; i++){     
 
-        var texture = new THREE.TextureLoader().load( 'assets/' + geometries[i].planet_texture);
+        var texture = new THREE.TextureLoader().load('assets/' + geometries[i].planet_texture);
         var geometry = new THREE.SphereGeometry(geometries[i].r, 35, 35);
         var material = new THREE.MeshLambertMaterial( { map: texture } );
         var sph = new THREE.Mesh(geometry, material);
@@ -75,7 +112,6 @@ function initGeometry(e) {
         sph.position.y = geometries[i].y;
         sph.position.z = geometries[i].z;
         spheres.push(sph);
-
     }
 }
 initGeometry();
@@ -99,15 +135,21 @@ for (i = 0; i < spheres.length; i++) {
 
     var counter = i;
     (function (i) {
-        var title = geometries [i].title
+        var title = geometries[i].title
         var content = geometries[i].content;
         var img = geometries[i].imageName;
 
         domEvents.addEventListener(spheres[i], 'mouseover', function(event){
             var tooltip = document.getElementById("tooltip");
+
             // Add main info
             tooltip_content =  "<h1>" + title + "</h1>" + "</br>" + content + "<img src='assets/" + img + "'>";
-            
+
+            // Add the planetary coordinates
+            coordinates = geometries[i].x + "," + geometries[i].y + "," + geometries[i].z
+            tooltip_content += "<div class='planet-coordinates'><p>Celestial body located at coordinates " + coordinates + "</p></div>"
+
+            // Push it to the DOM!
             tooltip.innerHTML = tooltip_content
 
             tooltip.classList.add("summon");
@@ -132,28 +174,7 @@ function render() {
     raycaster.setFromCamera(mouse, camera);
 
     var intersects = raycaster.intersectObjects( spheres, true );
-    /*if ( intersects.length > 0 ) {
-        if ( INTERSECTED == null ) {
-            INTERSECTED = intersects [ 0 ].object;
-            console.log(INTERSECTED)
-            var newMaterial = new THREE.MeshPhongMaterial({
-                
-                wireframe:false,
-                shininess: 0
-            });
-            INTERSECTED.material = newMaterial;
-        }
-    } else {
-        if (INTERSECTED != null) {
-            var newMaterial = new THREE.MeshPhongMaterial({
-                
-                wireframe:false,
-                shininess: 0
-            });
-            INTERSECTED.material = newMaterial;
-        }
-        INTERSECTED = null;    
-    }*/
+
     renderer.render( scene, camera );
 }
 
