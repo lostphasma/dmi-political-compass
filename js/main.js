@@ -106,7 +106,7 @@ for (i = 0; i < spheres.length; i++) {
         domEvents.addEventListener(spheres[i], 'mouseover', function(event){
             var tooltip = document.getElementById("tooltip");
             // Add main info
-            tooltip_content =  "<h1>" + title + "</h1>" + "</br>" + content + "<img src='assets/" + img + "'>";
+            tooltip_content =  "<h1>" + title + "</h1>" + "</br>" + content + "<img src='assets/" + img + "'> </br>";
             
             tooltip.innerHTML = tooltip_content
 
