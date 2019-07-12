@@ -32,6 +32,7 @@ scene.add(light);
 var clock = new THREE.Clock();
 var controls = new THREE.FirstPersonControls( camera );
 controls.lookSpeed = 0.1;
+controls.movementSpeed = 20;
 
 var redMaterial = new THREE.MeshLambertMaterial({
     emissive: 0xff0000,
