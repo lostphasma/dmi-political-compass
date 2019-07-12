@@ -76,10 +76,23 @@ function init_geometry(e) {
 
 	var loader = new THREE.TextureLoader();
 
-	// Add random gifs in the universe
+	// Add fixed space junk
+	for (i = 0; i < space_junk.length; i++) {
+		var map = new THREE.TextureLoader().load("assets/space_junk/fixed/" + space_junk[i].filename);
+		var material = new THREE.SpriteMaterial( { map: map, color: 0xffffff } );
+		var sprite = new THREE.Sprite( material );
+		// Set scalle
+		sprite.scale.set(space_junk[i].size, space_junk[i].size*.75, 1);
+		// Set position
+		sprite.position.set(space_junk[i].x, space_junk[i].y, space_junk[i].z)
+		scene.add(sprite);
+		console.log("adding " + "assets/space_junk/fixed/" + space_junk[i].filename)
+	}
+
+	// Add random space junk
 	for (i = 0; i < 12; i++) {
 
-		var map = new THREE.TextureLoader().load("assets/space_img/" + i + ".gif");
+		var map = new THREE.TextureLoader().load("assets/space_junk/random/" + i + ".gif");
 		var material = new THREE.SpriteMaterial( { map: map, color: 0xffffff } );
 		var sprite = new THREE.Sprite( material );
 
@@ -98,7 +111,6 @@ function init_geometry(e) {
 
 	// Add nebula images per corner
 	var nebula_coordinates = [[-2000,0,0],[0,-2000,0],[0,0,-2000],[2000,0,0],[0,2000,0],[0,0,2000]]
-
 	for (i = 0; i < 6; i++) {
 		// Load and add textures
 		var map = new THREE.TextureLoader().load("assets/nebulas/" + corner_names[i] + "-nebula.png");
@@ -130,6 +142,58 @@ function init_geometry(e) {
 		spheres.push(sph);
 
 	}
+
+	// Add tooltips
+	for (i = 0; i < spheres.length; i++) {
+
+		var url = geometries[i].url;
+		var linkify	= THREEx.Linkify(domEvents, spheres[i], url, false)
+
+		var counter = i;
+		(function (i) {
+			var title = geometries[i].title
+			var content = geometries[i].content;
+			var img = geometries[i].imageName;
+
+			var corner_names = ["dank", "anarchist", "left", "normie", "authoritarian", "right"];
+			var nebula_coordinates = [[-2000,0,0],[0,-2000,0],[0,0,-2000],[2000,0,0],[0,2000,0],[0,0,2000]];
+
+			var coordinate_text = get_coordinate_text(geometries[i].x, geometries[i].y, geometries[i].z);
+			var coordinates = geometries[i].x + "," + geometries[i].y + "," + geometries[i].z;
+			
+			var subreddits = geometries[i].subreddit
+			var subreddit_count = geometries[i].subreddit_comments
+			var ur_text = geometries[i].ur_text
+
+			domEvents.addEventListener(spheres[i], 'mouseover', function(event){
+
+				// Add main info
+				tooltip_content =  "<h1>" + title + "</h1>" + "</br>";
+				// Add slogan
+				tooltip_content += "<p class='content'>\"<em>" + content + "\"</em></p>";
+				// Add characteristics
+				tooltip_content += "<hr><p class='characteristics'>" + coordinate_text + "</p>";
+				// Add the planetary coordinates
+				tooltip_content += "<br><div class='planet-coordinates'><p>Celestial body located at coordinates " + coordinates + "</p></div><hr>"
+				// Add image
+				tooltip_content += "<img src='assets/" + img + "'>";
+				tooltip_content += "<br><div><p>Subreddit(s): " + subreddits + " (" + subreddit_count + " comments)</p></div>"
+				if (ur_text.length > 0) {
+					tooltip_content += "<br><div><p>Ur-text: " + ur_text + "</p></div>"
+				}
+
+				// Push it to the DOM!
+				var tooltip = document.getElementById("tooltip");
+				tooltip.innerHTML = tooltip_content
+				tooltip.classList.add("summon");
+
+			}, false)
+		}).call(this,i)
+
+		domEvents.addEventListener(spheres[i], 'mouseout', function(event){
+			document.getElementById("tooltip").classList.remove("summon");
+		}, false)
+	}
 }
 
 // Initialise the universe
@@ -145,61 +209,6 @@ function onMouseMove( event ) {
 
 document.addEventListener( 'mousemove', onMouseMove, false );
 
-// DOM-like behaviour
-// da fare ciclo for per prendere informazioni da data.js e pusharle
-for (i = 0; i < spheres.length; i++) {
-
-	var url = geometries[i].url;
-	var linkify	= THREEx.Linkify(domEvents, spheres[i], url, false)
-
-	var counter = i;
-	(function (i) {
-		var title = geometries[i].title
-		var content = geometries[i].content;
-		var img = geometries[i].imageName;
-
-		var corner_names = ["dank", "anarchist", "left", "normie", "authoritarian", "right"];
-		var nebula_coordinates = [[-2000,0,0],[0,-2000,0],[0,0,-2000],[2000,0,0],[0,2000,0],[0,0,2000]];
-
-		var coordinate_text = get_coordinate_text(geometries[i].x, geometries[i].y, geometries[i].z);
-		var coordinates = geometries[i].x + "," + geometries[i].y + "," + geometries[i].z;
-		console.log(geometries[i])
-
-		var subreddits = geometries[i].subreddit
-		var subreddit_count = geometries[i].subreddit_comments
-		var ur_text = geometries[i].ur_text
-
-		domEvents.addEventListener(spheres[i], 'mouseover', function(event){
-
-			// Add main info
-			tooltip_content =  "<h1>" + title + "</h1>" + "</br>";
-			// Add slogan
-			tooltip_content += "<p class='content'>\"<em>" + content + "\"</em></p>";
-			// Add characteristics
-			tooltip_content += "<hr><p class='characteristics'>" + coordinate_text + "</p>";
-			// Add the planetary coordinates
-			tooltip_content += "<br><div class='planet-coordinates'><p>Celestial body located at coordinates " + coordinates + "</p></div><hr>"
-			// Add image
-			tooltip_content += "<img src='assets/" + img + "'>";
-			tooltip_content += "<br><div><p>Subreddit(s): " + subreddits + " (" + subreddit_count + " comments)</p></div>"
-			if (ur_text.length > 0) {
-				tooltip_content += "<br><div><p>Ur-text: " + ur_text + "</p></div>"
-			}
-
-			// Push it to the DOM!
-			var tooltip = document.getElementById("tooltip");
-			tooltip.innerHTML = tooltip_content
-			tooltip.classList.add("summon");
-
-		}, false)
-	}).call(this,i)
-
-	domEvents.addEventListener(spheres[i], 'mouseout', function(event){
-		document.getElementById("tooltip").classList.remove("summon");
-	}, false)
-
-}
-
 function get_coordinate_text(x, y, z) {
 	/*Takes x, y, and z coordinates and returns spans for the six
 	coordinates proportionally sized*/
@@ -214,7 +223,7 @@ function get_coordinate_text(x, y, z) {
 		if (n <= 2) { size = size * -1 }; // convert number after first half of loop
 		size = (size * 2) + 200; // make positive first (range of 0-200)
 		size = size / 10; // divide to reasonable font size
-		size = 2 + size; // minimum size 4
+		size = 1 + size; // minimum size 1
 
 		text += "<span class='dank_size' style='font-size: " + size + ";'>" + corner_names[n] + "</span> ";
 
@@ -229,6 +238,9 @@ function get_coordinate_text(x, y, z) {
 }
 
 function render() {
+	/*
+	Function to render everything
+	*/
 	requestAnimationFrame( render );
 	renderer.render( scene, camera );
 	
