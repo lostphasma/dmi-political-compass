@@ -7,7 +7,10 @@ var geometries = [{
     title: "SJWs (Social Justice Warriors)",
     content: "Trigger warning please",
     imageName: "SJWs.png",
-    planet_texture: "SJWs.png"
+    planet_texture: "SJWs.png",
+    subreddit: "r/gamerghazi, r/shitredditsays",
+    subreddit_comments: 2509686,
+    ur_text: ""
  },{
     r: 1,
     x: 60,
@@ -17,7 +20,10 @@ var geometries = [{
     title: "Animal Rights Activists",
     content: "Animal Rights = Human Rights",
     imageName: "Animal Rights Activists.jpg",
-    planet_texture: "Animal Rights Activists.jpg"
+    planet_texture: "Animal Rights Activists.jpg",
+    subreddit: "r/vegan, r/AnimalRights, r/vegancirclejerk",
+    subreddit_comments: 3620867,
+    ur_text: "Singer, Peter (1975) Animal Liberation: A New Ethics for our Treatment of Animals"
  },{
     r: 1,
     x: 67,
@@ -27,7 +33,10 @@ var geometries = [{
     title: "Black Lives Matter",
     content: "Hand's Up, Don't Shoot ",
     imageName: "Black Lives Matter.png",
-    planet_texture: "Black Lives Matter.png"
+    planet_texture: "Black Lives Matter.png",
+    subreddit: "r/BlackLivesMatter",
+    subreddit_comments: 5543,
+    ur_text: "Fanon, Frantz (1952) Black Skin, White Masks"
  },{
     r: 1,
     x: 80,
@@ -37,7 +46,10 @@ var geometries = [{
     title: "#MeToo",
     content: "Time's Up",
     imageName: "MeToo.jpg",
-    planet_texture: "MeToo.jpg"
+    planet_texture: "MeToo.jpg",
+    subreddit: "r/meToo",
+    subreddit_comments: 4290,
+    ur_text: "Davis, Angela (1971) If They Come in the Morning: Voices of Resistance"
  },{
     r: 1,
     x: 40,
@@ -47,7 +59,10 @@ var geometries = [{
     title: "4th Wave Feminist",
     content: "No feminism without intersectionalism ",
     imageName: "4th Wave Feminist.jpg",
-    planet_texture: "4th Wave Feminist.jpg"
+    planet_texture: "4th Wave Feminist.jpg",
+    subreddit: "r/feminism, r/TrollXChromosomes, r/TwoXChromosomes",
+    subreddit_comments: 14513588,
+    ur_text: ""
  },{
     r: 1,
     x: 5,
@@ -57,7 +72,10 @@ var geometries = [{
     title: "PoC Radical Feminist  ",
     content: "Angela Davis",
     imageName: "PoC Radical Feminist.jpg",
-    planet_texture: "PoC Radical Feminist.jpg"
+    planet_texture: "PoC Radical Feminist.jpg",
+    subreddit: "-",
+    subreddit_comments: 0,
+    ur_text: ""
  },{
     r: 1,
     x: 75,
@@ -67,7 +85,10 @@ var geometries = [{
     title: "LGBT",
     content: "All love is equal",
     imageName: "LGBT.png",
-    planet_texture: "LGBT.png"
+    planet_texture: "LGBT.png",
+    subreddit: "r/lgbt, r/ainbow, r/actuallesbians, r/gay, r/bisexuality",
+    subreddit_comments: 4626360,
+    ur_text: ""
  },{
     r: 1,
     x: 30,
@@ -77,7 +98,10 @@ var geometries = [{
     title: "Gender Deconstructionists",
     content: "Gender is a social construct",
     imageName: "Gender Deconstructionists.png",
-    planet_texture: "Gender Deconstructionists.png"
+    planet_texture: "Gender Deconstructionists.jpg",
+    subreddit: "r/transgender, r/traaaaaaannnnnnnnnns",
+    subreddit_comments: 1799594,
+    ur_text: "Butler, Judith (1990) Gender Trouble: Feminism and the Subversion of Identity"
  },{
     r: 1,
     x: 30,
@@ -87,7 +111,10 @@ var geometries = [{
     title: "Gender-Critical Feminists",
     content: "Gender is not a social construct",
     imageName: "Gender-Critical Feminists.png",
-    planet_texture: "Gender-Critical Feminists.png"
+    planet_texture: "Gender-Critical Feminists.png",
+    subreddit: "r/GenderCritical/, r/RadicalFeminism",
+    subreddit_comments: 940298,
+    ur_text: ""
  },{
     r: 1,
     x: -40,
@@ -97,7 +124,10 @@ var geometries = [{
     title: "Queer anarchists",
     content: "Gender is state oppression",
     imageName: "Queer anarchists.png",
-    planet_texture: "Queer anarchists.png"
+    planet_texture: "Queer anarchists.png",
+    subreddit: "r/radicalqueers, r/anarchism",
+    subreddit_comments: 1428873,
+    ur_text: ""
  },{
     r: 1,
     x: 50,
@@ -107,7 +137,10 @@ var geometries = [{
     title: "Neo-Marxists",
     content: "Workers of the world, re-unite!",
     imageName: "Neo-Marxists.png",
-    planet_texture: "Neo-Marxists.png"
+    planet_texture: "Neo-Marxists.png",
+    subreddit: "r/socialism, r/marxism, r/communism, r/communism101",
+    subreddit_comments: 1867297,
+    ur_text: ""
  },{
     r: 1,
     x: 75,
@@ -117,7 +150,10 @@ var geometries = [{
     title: "Antifa",
     content: "NAZIS RAUS",
     imageName: "Antifa.jpg",
-    planet_texture: "Antifa.jpg"
+    planet_texture: "Antifa.jpg",
+    subreddit: "r/AntifascistsofReddit/, r/fuckthealtright",
+    subreddit_comments: 569609,
+    ur_text: ""
  },{
     r: 1,
     x: 50,
@@ -127,7 +163,10 @@ var geometries = [{
     title: "Occupy",
     content: "We are the 99%",
     imageName: "Occupy.jpg",
-    planet_texture: "Occupy.jpg"
+    planet_texture: "Occupy.jpg",
+    subreddit: "r/occupywallstreet/, r/Occupy/",
+    subreddit_comments: 411543,
+    ur_text: "Hardt, Michael and Antonio Negri (2000) Empire"
  },{
     r: 1,
     x: -20,
@@ -137,7 +176,10 @@ var geometries = [{
     title: "Dirtbag Left",
     content: "\"That's praxis\" (alternate: posting is praxis)",
     imageName: "Dirtbag Left.jpg",
-    planet_texture: "Dirtbag Left.jpg"
+    planet_texture: "Dirtbag Left.jpg",
+    subreddit: "r/DirtbagLeft/, r/chapotraphouse",
+    subreddit_comments: 5109317,
+    ur_text: "Chapo Trap House (2018) The Chapo Guide to Revolution: A Manifesto Against Logic, Facts and Reason"
  },{
     r: 1,
     x: 20,
@@ -147,7 +189,10 @@ var geometries = [{
     title: "DSA (Democratic Socialists of America)",
     content: "Bernie would have won ",
     imageName: "DSA.jpg",
-    planet_texture: "DSA.jpg"
+    planet_texture: "DSA.jpg",
+    subreddit: "r/demsocialists/, r/dsa/, r/DemocraticSocialism/, r/SandersforPresident",
+    subreddit_comments: 5165609,
+    ur_text: "Sanders, Bernie (2017) Bernie Sanders Guide to Political Revolution",
  },{
     r: 1,
     x: 90,
@@ -157,7 +202,10 @@ var geometries = [{
     title: "Establishment Left",
     content: "Still with her.",
     imageName: "Establishment Left.jpg",
-    planet_texture: "Establishment Left.jpg"
+    planet_texture: "Establishment Left.jpg",
+    subreddit: "r/progressive",
+    subreddit_comments: 276602,
+    ur_text: ""
  },{
     r: 1,
     x: -70,
@@ -167,7 +215,10 @@ var geometries = [{
     title: "Tankies",
     content: "Stalin did nothing wrong",
     imageName: "Tankies.png",
-    planet_texture: "Tankies.png"
+    planet_texture: "Tankies.png",
+    subreddit: "r/JordanPeterson",
+    subreddit_comments: 1207335,
+    ur_text: ""
  },{
     r: 1,
     x: 95,
@@ -177,7 +228,10 @@ var geometries = [{
     title: "Neo-Panglossians",
     content: "I've got a good feeling about this!",
     imageName: "Neo-Panglossians.jpg",
-    planet_texture: "Neo-Panglossians.jpg"
+    planet_texture: "Neo-Panglossians.jpg",
+    subreddit: "r/Philanthropy",
+    subreddit_comments: 922,
+    ur_text: ""
  },{
     r: 1,
     x: 0,
@@ -187,7 +241,10 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/New_Atheism",
     content: "In this moment, I am euphoric. Not because of any phony god's blessing. But because, I am enlightened by my intelligencey intelligence",
     imageName: "New Atheists.jpg",
-    planet_texture: "New Atheists.jpg"
+    planet_texture: "New Atheists.jpg",
+    subreddit: "r/atheism, r/SamHarris",
+    subreddit_comments: 22240465,
+    ur_text: "Dawkins, Richard (2006) The God Delusion"
  },{
     r: 1,
     x: -35,
@@ -197,7 +254,10 @@ var geometries = [{
     title: "Street Epistemologists",
     content: "Socrates.",
     imageName: "Street Epistemologists.jpg",
-    planet_texture: "Street Epistemologists.jpg"
+    planet_texture: "Street Epistemologists.jpg",
+    subreddit: "r/StreetEpistemology/",
+    subreddit_comments: 2936,
+    ur_text: ""
  },{
     r: 1,
     x: -15,
@@ -207,7 +267,10 @@ var geometries = [{
     title: "Rationalist Diaspora",
     content: "What would Bayes do?",
     imageName: "Rationalist Diaspora.png",
-    planet_texture: "Rationalist Diaspora.png"
+    planet_texture: "Rationalist Diaspora.png",
+    subreddit: "r/RationalistDiaspora/, /r/slatestarcodex/, r/hpmor, r/themotte",
+    subreddit_comments: 809076,
+    ur_text: "Yudkowsky, Eliezer - Less Wrong Sequences"
  },{
     r: 1,
     x: -30,
@@ -217,7 +280,10 @@ var geometries = [{
     title: "Integral Theorists",
     content: "It's all connected, man",
     imageName: "Integral Theorists.jpg",
-    planet_texture: "Integral Theorists.jpg"
+    planet_texture: "Integral Theorists.jpg",
+    subreddit: "r/Integral/",
+    subreddit_comments: 896,
+    ur_text: "Wilber, Ken (1970)  - The Spectrum of Consciousness",
  },{
     r: 1,
     x: 25,
@@ -227,7 +293,10 @@ var geometries = [{
     title: "Sorters",
     content: "🐸 Lobsters are hierarchical!",
     imageName: "Sorters.jpg",
-    planet_texture: "Sorters.jpg"
+    planet_texture: "Sorters.jpg",
+    subreddit: "r/jordanpeterson",
+    subreddit_comments: 1207335,
+    ur_text: "Peterson, Jordan - 12 Rules for Life"
  },{
     r: 1,
     x: 12,
@@ -237,7 +306,10 @@ var geometries = [{
     title: "Intellectual Dark Web",
     content: "Debate me",
     imageName: "Intellectual Dark Web.png",
-    planet_texture: "Intellectual Dark Web.png"
+    planet_texture: "Intellectual Dark Web.png",
+    subreddit: "r/IntellectualDarkWeb/, r/DaveRubin, r/JoeRogan",
+    subreddit_comments: 1726760,
+    ur_text: ""
  },{
     r: 1,
     x: -45,
@@ -247,7 +319,10 @@ var geometries = [{
     title: "Crusaders",
     content: "Deus vult",
     imageName: "Crusaders.png",
-    planet_texture: "Crusaders.png"
+    planet_texture: "Crusaders.png",
+    subreddit: "r/CrusaderKings, r/eu4",
+    subreddit_comments: 4024991,
+    ur_text: "The Bible"
  },{
     r: 1,
     x: -20,
@@ -257,7 +332,10 @@ var geometries = [{
     title: "Neo-Paganists",
     content: "Witchcraft, with more crystals and less brooms ",
     imageName: "Neo-Paganists.jpg",
-    planet_texture: "Neo-Paganists.jpg"
+    planet_texture: "Neo-Paganists.jpg",
+    subreddit: "r/paganism",
+    subreddit_comments: 10370,
+    ur_text: ""
  },{
     r: 1,
     x: -5,
@@ -267,7 +345,10 @@ var geometries = [{
     title: "Odinism",
     content: "I am a white supremacist",
     imageName: "Odinism.jpg",
-    planet_texture: "Odinism.jpg"
+    planet_texture: "Odinism.jpg",
+    subreddit: "r/heathenry",
+    subreddit_comments: 12823,
+    ur_text: "The Poetic Edda"
  },{
     r: 1,
     x: 95,
@@ -277,7 +358,10 @@ var geometries = [{
     title: "Christian Right",
     content: "What would Jesus do?",
     imageName: "Christian Right.jpg",
-    planet_texture: "Christian Right.jpg"
+    planet_texture: "Christian Right.jpg",
+    subreddit: "r/ConservativeChristian/",
+    subreddit_comments: 543,
+    ur_text: "The Bible (King James Version)"
  },{
     r: 1,
     x: 55,
@@ -287,7 +371,10 @@ var geometries = [{
     title: "Libertarians",
     content: "Anarcho-capitalism for the 1%",
     imageName: "Libertarians.png",
-    planet_texture: "Libertarians.png"
+    planet_texture: "Libertarians.png",
+    subreddit: "r/libertarian, r/neoliberal, r/GoldandBlack",
+    subreddit_comments: 10610215,
+    ur_text: ""
  },{
     r: 1,
     x: 87,
@@ -297,7 +384,10 @@ var geometries = [{
     title: "Establishment Right",
     content: "Please clap",
     imageName: "Establishment Right.png",
-    planet_texture: "Establishment Right.png"
+    planet_texture: "Establishment Right.png",
+    subreddit: "r/conservative/",
+    subreddit_comments: 3248519,
+    ur_text: ""
  },{
     r: 1,
     x: 82,
@@ -307,7 +397,10 @@ var geometries = [{
     title: "Tea Party",
     content: "more like oBUMMER",
     imageName: "Tea Party.png",
-    planet_texture: "Tea Party.png"
+    planet_texture: "Tea Party.png",
+    subreddit: "r/republican",
+    subreddit_comments: 427950,
+    ur_text: ""
  },{
     r: 1,
     x: -25,
@@ -317,7 +410,10 @@ var geometries = [{
     title: "Trumpists",
     content: "Make America Great Again",
     imageName: "Trumpists.jpg",
-    planet_texture: "Trumpists.jpg"
+    planet_texture: "Trumpists.jpg",
+    subreddit: "r/The_Donald",
+    subreddit_comments: 40397013,
+    ur_text: "Trump, Donald - The Art of the Deal"
  },{
     r: 1,
     x: -55,
@@ -327,7 +423,10 @@ var geometries = [{
     url: "https://en.wikipedia.org/wiki/InfoWars",
     content: "Everything I don't like is a false flag - alternatively: \"they're putting chemicals in the water that turn the friggin' frogs gay.\"e friggin' frogs gay.",
     imageName: "InfoWarriors.png",
-    planet_texture: "InfoWarriors.png"
+    planet_texture: "InfoWarriors.png",
+    subreddit: "r/conspiracy",
+    subreddit_comments: 10931457,
+    ur_text: "Alex Jones\' YouTube channel"
  },{
     r: 1,
     x: -65,
@@ -337,7 +436,10 @@ var geometries = [{
     title: "QAnoners",
     content: "Where we go one we go all ",
     imageName: "QAnoners.jpg",
-    planet_texture: "QAnoners.jpg"
+    planet_texture: "QAnoners.jpg",
+    subreddit: "r/Qanon, r/thegreatawakening",
+    subreddit_comments: 354,
+    ur_text: "/pol/"
  },{
     r: 1,
     x: 45,
@@ -347,7 +449,10 @@ var geometries = [{
     title: "Alt-Lite",
     content: "Triggered, libtard? ",
     imageName: "Alt-Lite.jpg",
-    planet_texture: "Alt-Lite.jpg"
+    planet_texture: "Alt-Lite.jpg",
+    subreddit: "r/TheNewRight, r/ShitLiberalsSay, r/SocialJusticeinAction",
+    subreddit_comments: 538813,
+    ur_text: ""
  },{
     r: 1,
     x: 10,
@@ -357,7 +462,10 @@ var geometries = [{
     title: "Alt-Right",
     content: "Dress well and hate things",
     imageName: "Alt-Right.jpg",
-    planet_texture: "Alt-Right.jpg"
+    planet_texture: "Alt-Right.jpg",
+    subreddit: "r/AltRightChristian",
+    subreddit_comments: 6146,
+    ur_text: ""
  },{
     r: 1,
     x: 90,
@@ -367,7 +475,10 @@ var geometries = [{
     title: "Modern Neo-Nazis",
     content: "We must secure the existence of our people and a future for white children",
     imageName: "Modern Neo-Nazis.png",
-    planet_texture: "Modern Neo-Nazis.png"
+    planet_texture: "Modern Neo-Nazis.png",
+    subreddit: "r/nationalsocialism",
+    subreddit_comments: 13068,
+    ur_text: ""
  },{
     r: 1,
     x: -80,
@@ -377,7 +488,10 @@ var geometries = [{
     title: "Neoreactionaries",
     content: "\"I no longer believe that freedom and democracy are compatible\"?",
     imageName: "Neoreactionaries.jpg",
-    planet_texture: "Neoreactionaries.jpg"
+    planet_texture: "Neoreactionaries.jpg",
+    subreddit: "r/DarkEnlightenment",
+    subreddit_comments: 52392,
+    ur_text: ""
  },{
     r: 1,
     x: -30,
@@ -387,7 +501,10 @@ var geometries = [{
     title: "Gamergaters",
     content: "Get your politics out of my video games",
     imageName: "Gamergaters.jpg",
-    planet_texture: "Gamergaters.jpg"
+    planet_texture: "Gamergaters.jpg",
+    subreddit: "r/KotakuinAction",
+    subreddit_comments: 6297465,
+    ur_text: ""
  },{
     r: 1,
     x: 20,
@@ -397,7 +514,10 @@ var geometries = [{
     title: "MRA (Mens Right Advocates)",
     content: "Men have rights too! ",
     imageName: "MRA.jpg",
-    planet_texture: "MRA.jpg"
+    planet_texture: "MRA.jpg",
+    subreddit: "r/MensRights",
+    subreddit_comments: 4288049,
+    ur_text: ""
  },{
     r: 1,
     x: -30,
@@ -407,7 +527,10 @@ var geometries = [{
     title: "The Red Pill",
     content: "Down the misogynist rabbit hole",
     imageName: "The Red Pill.png",
-    planet_texture: "The Red Pill.png"
+    planet_texture: "The Red Pill.png",
+    subreddit: "r/TheRedPill, r/RedPillWomen, r/AskTRP",
+    subreddit_comments: 4776465,
+    ur_text: ""
  },{
     r: 1,
     x: -10,
@@ -417,7 +540,10 @@ var geometries = [{
     title: "MGTOW (Men Going Their Own Way)",
     content: "Lesbian separatism, but for men (but no homo)",
     imageName: "MGTOW.png",
-    planet_texture: "MGTOW.png"
+    planet_texture: "MGTOW.png",
+    subreddit: "r/MGTOW",
+    subreddit_comments: 3560404,
+    ur_text: ""
  },{
     r: 1,
     x: -60,
@@ -427,7 +553,10 @@ var geometries = [{
     title: "Incels",
     content: "Forever alone",
     imageName: "Incels.png",
-    planet_texture: "Incels.png"
+    planet_texture: "Incels.png",
+    subreddit: "r/Braincels, r/incelswithouthate, r/incels",
+    subreddit_comments: 3956999,
+    ur_text: ""
  },{
     r: 1,
     x: -75,
@@ -437,7 +566,10 @@ var geometries = [{
     title: "Anarcho-communism",
     content: "Whats mine is yours",
     imageName: "Anarcho-communism.png",
-    planet_texture: "Anarcho-communism.png"
+    planet_texture: "Anarcho-communism.png",
+    subreddit: "r/anarchocommunism",
+    subreddit_comments: 7026,
+    ur_text: ""
  },{
     r: 1,
     x: -90,
@@ -447,7 +579,10 @@ var geometries = [{
     title: "Anarcho-primitivism",
     content: "Luddism for anarchists",
     imageName: "Anarcho-primitivism.jpg",
-    planet_texture: "Anarcho-primitivism.jpg"
+    planet_texture: "Anarcho-primitivism.jpg",
+    subreddit: "/r/anarcho_primitivism",
+    subreddit_comments: 5018,
+    ur_text: ""
  },{
     r: 1,
     x: -60,
@@ -457,7 +592,10 @@ var geometries = [{
     title: "Anarcho-transhumanism",
     content: "I want to be a computer (if we were all computers, we'd finally be equal)",
     imageName: "Anarcho-transhumanism.jpg",
-    planet_texture: "Anarcho-transhumanism.jpg"
+    planet_texture: "Anarcho-transhumanism.jpg",
+    subreddit: "r/anarchotranshumanist",
+    subreddit_comments: 1114,
+    ur_text: ""
  },{
     r: 1,
     x: -55,
@@ -467,7 +605,10 @@ var geometries = [{
     title: "Anarcho-capitalism",
     content: "\"I was beat up by left anarchists in Greece. (self.Anarcho_Capitalism)\"",
     imageName: "Anarcho-capitalism.jpg",
-    planet_texture: "Anarcho-capitalism.jpg"
+    planet_texture: "Anarcho-capitalism.jpg",
+    subreddit: "r/AnarchoCapitalism",
+    subreddit_comments: 3389,
+    ur_text: ""
  },{
     r: 1,
     x: -15,
@@ -477,7 +618,10 @@ var geometries = [{
     title: "Anarcho-syndicalist ",
     content: "Workers of the world, unite! (but not too much)",
     imageName: "Anarcho-syndicalist .png",
-    planet_texture: "Anarcho-syndicalist .png"
+    planet_texture: "Anarcho-syndicalist .png",
+    subreddit: "r/anarchosyndicalism",
+    subreddit_comments: 156,
+    ur_text: ""
  },{
     r: 1,
     x: -62,
@@ -487,7 +631,10 @@ var geometries = [{
     title: "Agorists",
     content: "What if everything was bought and sold like drugs?",
     imageName: "Agorists.jpg",
-    planet_texture: "Agorists.jpg"
+    planet_texture: "Agorists.jpg",
+    subreddit: "r/Agorism",
+    subreddit_comments: 7713,
+    ur_text: ""
  },{
     r: 1,
     x: -42,
@@ -497,7 +644,10 @@ var geometries = [{
     title: "Anarcho-pacifists ",
     content: "uwu wevowution pwease? (don't hit me)",
     imageName: "Anarcho-pacifists .jpg",
-    planet_texture: "Anarcho-pacifists .jpg"
+    planet_texture: "Anarcho-pacifists .jpg",
+    subreddit: "r/AnarchoPacifism",
+    subreddit_comments: 884,
+    ur_text: ""
  },{
     r: 1,
     x: -10,
@@ -507,7 +657,10 @@ var geometries = [{
     title: "Mutualists (also anarcho-mututalists) ",
     content: "It's free real estate",
     imageName: "Mutualists (also anarcho-mututalists) .jpg",
-    planet_texture: "Mutualists (also anarcho-mututalists) .jpg"
+    planet_texture: "Mutualists (also anarcho-mututalists) .jpg",
+    subreddit: "r/mutualism",
+    subreddit_comments: 4983,
+    ur_text: ""
  },{
     r: 1,
     x: -30,
@@ -517,7 +670,10 @@ var geometries = [{
     title: "Anarcha-feminists",
     content: "Patriarchy dies with the state ",
     imageName: "Anarcha-feminists.jpg",
-    planet_texture: "Anarcha-feminists.jpg"
+    planet_texture: "Anarcha-feminists.jpg",
+    subreddit: "r/anarchafeminism",
+    subreddit_comments: 2011,
+    ur_text: ""
  },{
     r: 1,
     x: -77,
@@ -527,7 +683,10 @@ var geometries = [{
     title: "Egoism",
     content: "Everything I don't like is a spook. ",
     imageName: "Egoism.png",
-    planet_texture: "Egoism.png"
+    planet_texture: "Egoism.png",
+    subreddit: "/r/egoism",
+    subreddit_comments: 0,
+    ur_text: ""
  },{
     r: 1,
     x: -85,
@@ -537,7 +696,10 @@ var geometries = [{
     title: "Anarcho-individualism",
     content: "Revolution? More like self-evolution.",
     imageName: "Anarcho-individualism.jpg",
-    planet_texture: "Anarcho-individualism.jpg"
+    planet_texture: "Anarcho-individualism.jpg",
+    subreddit: "r/IndividualAnarchism",
+    subreddit_comments: 1112,
+    ur_text: ""
  },{
     r: 1,
     x: -60,
@@ -547,7 +709,10 @@ var geometries = [{
     title: "Unconditional Accellerationism",
     content: "The only way out is through",
     imageName: "Unconditional Accellerationism.jpg",
-    planet_texture: "Unconditional Accellerationism.jpg"
+    planet_texture: "Unconditional Accellerationism.jpg",
+    subreddit: "r/accelerationism",
+    subreddit_comments: 72,
+    ur_text: ""
  },{
     r: 1,
     x: -20,
@@ -557,7 +722,10 @@ var geometries = [{
     title: "Xenofemism/G-Acc",
     content: "If nature is unjust, change nature.",
     imageName: "XenofemismG-Acc.png",
-    planet_texture: "XenofemismG-Acc.png"
+    planet_texture: "XenofemismG-Acc.png",
+    subreddit: "/r/xenofeminism",
+    subreddit_comments: 0,
+    ur_text: ""
  },{
     r: 1,
     x: -45,
@@ -567,6 +735,9 @@ var geometries = [{
     title: "Left Accelerationism",
     content: "Fully Automated Luxury Communism",
     imageName: "Left Accelerationism.jpg",
-    planet_texture: "Left Accelerationism.jpg"
-    },
+    planet_texture: "Left Accelerationism.jpg",
+    subreddit: "r/accelerationism, r/falc",
+    subreddit_comments: 73,
+    ur_text: ""
+    }
  ]

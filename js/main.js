@@ -114,7 +114,13 @@ function init_geometry(e) {
 	for (i = 0; i < geometries.length; i++){     
 
 		var texture = new THREE.TextureLoader().load("assets/" + geometries[i].planet_texture);
-		var geometry = new THREE.SphereGeometry(geometries[i].r, 50, 50);
+
+		// Size the planets on subreddit comments
+		var planet_diameter = ((geometries[i].subreddit_comments / 40397013) * 100) / 5
+		// Shouldn't be too small
+		if (planet_diameter < 1) { planet_diameter = 1}
+
+		var geometry = new THREE.SphereGeometry(planet_diameter, 50, 50);
 		var material = new THREE.MeshLambertMaterial( { map: texture } );
 		var sph = new THREE.Mesh(geometry, material);
 		scene.add(sph);
@@ -157,6 +163,11 @@ for (i = 0; i < spheres.length; i++) {
 
 		var coordinate_text = get_coordinate_text(geometries[i].x, geometries[i].y, geometries[i].z);
 		var coordinates = geometries[i].x + "," + geometries[i].y + "," + geometries[i].z;
+		console.log(geometries[i])
+
+		var subreddits = geometries[i].subreddit
+		var subreddit_count = geometries[i].subreddit_comments
+		var ur_text = geometries[i].ur_text
 
 		domEvents.addEventListener(spheres[i], 'mouseover', function(event){
 
@@ -165,11 +176,15 @@ for (i = 0; i < spheres.length; i++) {
 			// Add slogan
 			tooltip_content += "<p class='content'>\"<em>" + content + "\"</em></p>";
 			// Add characteristics
-			tooltip_content += "<p class='characteristics'>" + coordinate_text + "</p>";
+			tooltip_content += "<hr><p class='characteristics'>" + coordinate_text + "</p>";
 			// Add the planetary coordinates
-			tooltip_content += "<br><div class='planet-coordinates'><p>Celestial body located at coordinates " + coordinates + "</p></div>"
+			tooltip_content += "<br><div class='planet-coordinates'><p>Celestial body located at coordinates " + coordinates + "</p></div><hr>"
 			// Add image
 			tooltip_content += "<img src='assets/" + img + "'>";
+			tooltip_content += "<br><div><p>Subreddit(s): " + subreddits + " (" + subreddit_count + " comments)</p></div>"
+			if (ur_text.length > 0) {
+				tooltip_content += "<br><div><p>Ur-text: " + ur_text + "</p></div>"
+			}
 
 			// Push it to the DOM!
 			var tooltip = document.getElementById("tooltip");
