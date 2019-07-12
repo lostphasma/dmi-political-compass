@@ -140,19 +140,19 @@ for (i = 0; i < spheres.length; i++) {
         var img = geometries[i].imageName;
 
         domEvents.addEventListener(spheres[i], 'mouseover', function(event){
-            var tooltip = document.getElementById("tooltip");
 
             // Add main info
-            tooltip_content =  "<h1>" + title + "</h1>" + "</br>" + content + "<img src='assets/" + img + "'>";
-
+            tooltip_content =  "<h1>" + title + "</h1>" + "</br>" + "<p class = 'content'>" + content + "</p>" + "<img src='assets/" + img + "'>";
+            
             // Add the planetary coordinates
             coordinates = geometries[i].x + "," + geometries[i].y + "," + geometries[i].z
             tooltip_content += "<div class='planet-coordinates'><p>Celestial body located at coordinates " + coordinates + "</p></div>"
 
             // Push it to the DOM!
+            var tooltip = document.getElementById("tooltip");
             tooltip.innerHTML = tooltip_content
-
             tooltip.classList.add("summon");
+
         }, false)
     }).call(this,i)
 
