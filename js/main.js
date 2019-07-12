@@ -23,8 +23,8 @@ var domEvents = new THREEx.DomEvents(camera, renderer.domElement)
 // lights management
 light = new THREE.PointLight(0xffffff, 0.8);
 light.castShadow = true;
-light.shadow.camera.near=0.1;
-light.shadow.camera.far=25;
+light.shadow.camera.near = 0.1;
+light.shadow.camera.far = 25;
 light.position.x = light.position.y = light.position.z = 0;
 scene.add(light);
 
@@ -84,10 +84,11 @@ function initGeometry(e) {
 
     // Add nebula images per corner
     var nebula_coordinates = [[-2000,0,0],[0,-2000,0],[0,0,-2000],[2000,0,0],[0,2000,0],[0,0,2000]]
+    var corner_names = ["dank", "anarchist", "left", "normie", "authoritarian", "right"]
 
-    for (i = 0; i < 5; i++) {
+    for (i = 0; i < 6; i++) {
 
-        var map = new THREE.TextureLoader().load("assets/nebulas/" + (i + 1) + ".png");
+        var map = new THREE.TextureLoader().load("assets/nebulas/" + corner_names[i] + "-nebula.png");
         var material = new THREE.SpriteMaterial( { map: map, color: 0xffffff } );
         var sprite = new THREE.Sprite( material );
         
@@ -114,6 +115,7 @@ function initGeometry(e) {
         spheres.push(sph);
     }
 }
+
 initGeometry();
 
 renderer.render(scene, camera);
