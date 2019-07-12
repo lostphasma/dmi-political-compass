@@ -58,3 +58,10 @@ h1 {
   font-family: 'Roboto Mono', monospace;
   font-weight: bold;
 }
+
+#content {
+  padding-bottom: 50px;
+}
+img {
+  padding-top: 20px;
+}
