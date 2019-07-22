@@ -11,4 +11,18 @@ var space_junk = [{
 	y: 93,
 	z: 99,
 	size: 30
+},
+{
+	filename: "falgsc.png",
+	x: 58,
+	y: -64,
+	z: -123,
+	size: 8
+},
+{
+	filename: "apollo11.png",
+    x: 130,
+    y: 20,
+    z: 33,
+	size: 4
 }]

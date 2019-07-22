@@ -143,6 +143,10 @@ function init_geometry(e) {
 
 	}
 
+	// Labels and coordinates for the edges of the compass
+	var corner_names = ["dank", "anarchist", "left", "normie", "authoritarian", "right"];
+	var nebula_coordinates = [[-2000,0,0],[0,-2000,0],[0,0,-2000],[2000,0,0],[0,2000,0],[0,0,2000]];
+
 	// Add tooltips
 	for (i = 0; i < spheres.length; i++) {
 
@@ -150,17 +154,13 @@ function init_geometry(e) {
 		var linkify	= THREEx.Linkify(domEvents, spheres[i], url, false)
 
 		var counter = i;
+
 		(function (i) {
 			var title = geometries[i].title
 			var content = geometries[i].content;
 			var img = geometries[i].imageName;
-
-			var corner_names = ["dank", "anarchist", "left", "normie", "authoritarian", "right"];
-			var nebula_coordinates = [[-2000,0,0],[0,-2000,0],[0,0,-2000],[2000,0,0],[0,2000,0],[0,0,2000]];
-
 			var coordinate_text = get_coordinate_text(geometries[i].x, geometries[i].y, geometries[i].z);
 			var coordinates = geometries[i].x + "," + geometries[i].y + "," + geometries[i].z;
-			
 			var subreddits = geometries[i].subreddit
 			var subreddit_count = geometries[i].subreddit_comments
 			var ur_text = geometries[i].ur_text
@@ -176,7 +176,7 @@ function init_geometry(e) {
 				// Add the planetary coordinates
 				tooltip_content += "<br><div class='planet-coordinates'><p>Celestial body located at coordinates " + coordinates + "</p></div><hr>"
 				// Add image
-				tooltip_content += "<img src='assets/" + img + "'>";
+				tooltip_content += "<img src='assets/platet_textures/" + img + "'>";
 				tooltip_content += "<br><div><p>Subreddit(s): " + subreddits + " (" + subreddit_count + " comments)</p></div>"
 				if (ur_text.length > 0) {
 					tooltip_content += "<br><div><p>Ur-text: " + ur_text + "</p></div>"
@@ -201,13 +201,24 @@ init_geometry();
 
 renderer.render(scene, camera);
 
-function onMouseMove( event ) {
+function onMouseMove(event) {
 	event.preventDefault();
 	mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
 	mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
 }
 
-document.addEventListener( 'mousemove', onMouseMove, false );
+function onMouseClick (event) {
+	camera.updateMatrixWorld();
+	var vector = camera.position.clone();
+	vector.applyMatrix4( camera.matrixWorld );
+	var cam_coordinates = get_coordinate_text(vector[x], vector[y], vetor);
+	var dashboard = document.getElementById("dashboard");
+	dashboard.innerHTML = cam_coordinates
+
+}
+
+document.addEventListener('mousemove', onMouseMove, false );
+document.addEventListener('mouseclick', onMouseClick, false );
 
 function get_coordinate_text(x, y, z) {
 	/*Takes x, y, and z coordinates and returns spans for the six
