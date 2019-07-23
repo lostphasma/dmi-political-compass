@@ -176,7 +176,7 @@ function init_geometry(e) {
 				// Add the planetary coordinates
 				tooltip_content += "<br><div class='planet-coordinates'><p>Celestial body located at coordinates " + coordinates + "</p></div><hr>"
 				// Add image
-				tooltip_content += "<img src='assets/platet_textures/" + img + "'>";
+				tooltip_content += "<img src='assets/planet_textures/" + img + "'>";
 				tooltip_content += "<br><div><p>Subreddit(s): " + subreddits + " (" + subreddit_count + " comments)</p></div>"
 				if (ur_text.length > 0) {
 					tooltip_content += "<br><div><p>Ur-text: " + ur_text + "</p></div>"
@@ -201,28 +201,25 @@ init_geometry();
 
 renderer.render(scene, camera);
 
-function onMouseMove(event) {
+function mouse_move(event) {
 	event.preventDefault();
 	mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
 	mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
 }
 
-function onMouseClick (event) {
-	camera.updateMatrixWorld();
-	var vector = camera.position.clone();
-	vector.applyMatrix4( camera.matrixWorld );
-	var cam_coordinates = get_coordinate_text(vector[x], vector[y], vetor);
-	var dashboard = document.getElementById("dashboard");
-	dashboard.innerHTML = cam_coordinates
-
-}
-
-document.addEventListener('mousemove', onMouseMove, false );
-document.addEventListener('mouseclick', onMouseClick, false );
+document.addEventListener('mousemove', mouse_move, false );
 
 function get_coordinate_text(x, y, z) {
 	/*Takes x, y, and z coordinates and returns spans for the six
 	coordinates proportionally sized*/
+
+	// Make sure the coordinates stay within the bounds
+	if (x > 100) { x = 100};
+	if (x < -100) { x = -100};
+	if (y > 100) { y = 100};
+	if (y < -100) { y = -100};
+	if (z > 100) { z = 100};
+	if (z < -100) { z = -100};
 
 	var coordinates = [x, y, z];
 	var corner_names = ["dank", "anarchist", "left", "normie", "authoritarian", "right"];
@@ -235,6 +232,7 @@ function get_coordinate_text(x, y, z) {
 		size = (size * 2) + 200; // make positive first (range of 0-200)
 		size = size / 10; // divide to reasonable font size
 		size = 1 + size; // minimum size 1
+		if (size > 40){ size = 40; } // maximum size 40 
 
 		text += "<span class='dank_size' style='font-size: " + size + ";'>" + corner_names[n] + "</span> ";
 
@@ -248,21 +246,35 @@ function get_coordinate_text(x, y, z) {
 	return text
 }
 
+var old_cam_position = ""
+var intersects
+
+var dashboard = document.getElementById("dash-text");
+var dash_coordinates = document.getElementById("dash-coordinates");
+
 function render() {
-	/*
-	Function to render everything
-	*/
-	requestAnimationFrame( render );
-	renderer.render( scene, camera );
+	/* Function to render everything */
+	requestAnimationFrame( render );	
 	
-	// update the camera
+	// Update the camera
 	controls.update(clock.getDelta());
 	
-	// update the picking ray with the camera and mouse position
+	// Update the picking ray with the camera and mouse position
 	raycaster.setFromCamera(mouse, camera);
-
-	var intersects = raycaster.intersectObjects( spheres, true );
-
+	intersects = raycaster.intersectObjects( spheres, true );
+	
+	// Update the pilot's navigation dashboard if the camera changed
+	// Covert the camera positions to a string for easy comparison
+	cam_position = camera.position
+	new_cam_position = "[" + cam_position.x.toFixed(2) + "] " + "[" + cam_position.y.toFixed(2) + "] " + "[" + cam_position.z.toFixed(2) + "]"
+	if (new_cam_position !== old_cam_position) {
+		cam_text = get_coordinate_text(cam_position.x, cam_position.y, cam_position.z)
+		dash_coordinates.innerHTML = new_cam_position
+		dashboard.innerHTML = cam_text
+	}
+	old_cam_position = new_cam_position
+	
+	// Keep rendering! 
 	renderer.render( scene, camera );
 }
 

@@ -25,4 +25,26 @@ var space_junk = [{
     y: 20,
     z: 33,
 	size: 4
-}]
+},
+{
+    filename: "spacetesla.png",
+    x: -60,
+    y: -60,
+    z: 60,
+    size: 40
+},
+{
+    filename: "galaxybrain.png",
+    x: -90,
+    y: -200,
+    z: 0,
+    size: 60
+},
+{
+    filename: "rainbowroad.png",
+    x: 100,
+    y: -100,
+    z: 150,
+    size: 100
+}
+]
