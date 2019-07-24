@@ -86,7 +86,7 @@ function init_geometry(e) {
 		// Set position
 		sprite.position.set(space_junk[i].x, space_junk[i].y, space_junk[i].z)
 		scene.add(sprite);
-		console.log("adding " + "assets/space_junk/fixed/" + space_junk[i].filename)
+		//console.log("adding assets/space_junk/fixed/" + space_junk[i].filename)
 	}
 
 	// Add random space junk
@@ -147,6 +147,9 @@ function init_geometry(e) {
 	var corner_names = ["dank", "anarchist", "left", "normie", "authoritarian", "right"];
 	var nebula_coordinates = [[-2000,0,0],[0,-2000,0],[0,0,-2000],[2000,0,0],[0,2000,0],[0,0,2000]];
 
+	// Push it to the DOM!
+	var tooltip = document.getElementById("tooltip");
+
 	// Add tooltips
 	for (i = 0; i < spheres.length; i++) {
 
@@ -165,7 +168,7 @@ function init_geometry(e) {
 			var subreddit_count = geometries[i].subreddit_comments
 			var ur_text = geometries[i].ur_text
 
-			domEvents.addEventListener(spheres[i], 'mouseover', function(event){
+			domEvents.addEventListener(spheres[i], 'mouseover', function(e){
 
 				// Add main info
 				tooltip_content =  "<h1>" + title + "</h1>" + "</br>";
@@ -182,15 +185,13 @@ function init_geometry(e) {
 					tooltip_content += "<br><div><p>Ur-text: " + ur_text + "</p></div>"
 				}
 
-				// Push it to the DOM!
-				var tooltip = document.getElementById("tooltip");
 				tooltip.innerHTML = tooltip_content
 				tooltip.classList.add("summon");
 
 			}, false)
 		}).call(this,i)
 
-		domEvents.addEventListener(spheres[i], 'mouseout', function(event){
+		domEvents.addEventListener(spheres[i], 'mouseout', function(e){
 			document.getElementById("tooltip").classList.remove("summon");
 		}, false)
 	}
@@ -198,13 +199,12 @@ function init_geometry(e) {
 
 // Initialise the universe
 init_geometry();
-
 renderer.render(scene, camera);
 
-function mouse_move(event) {
-	event.preventDefault();
-	mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-	mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+function mouse_move(e) {
+	e.preventDefault();
+	mouse.x = ( e.clientX / window.innerWidth ) * 2 - 1;
+	mouse.y = - ( e.clientY / window.innerHeight ) * 2 + 1;
 }
 
 document.addEventListener('mousemove', mouse_move, false );
@@ -246,9 +246,53 @@ function get_coordinate_text(x, y, z) {
 	return text
 }
 
+var audio
+var audio_playing = false
+var audio_playing_id = ""
+
+function play_music(e) {
+	/* Function to start and stop music with the dashboard buttons */
+	console.log(e);
+	console.log(e.target.id);
+
+	// If there's no audio playing, simply start a new track
+	if (audio_playing == false) {
+		audio = new Audio("assets/music/" + e.target.id + ".mp3");
+		audio.play();
+		audio_playing_id = e.target.id
+		document.getElementById(e.target.id).src = "assets/dashboard/music-button-play.png"; 
+		audio_playing = true
+	}
+
+	// Stop the already playing track if a button is pressed
+	else {
+		// Pause the audio
+		audio.pause();
+
+		// Only play a new track if it's a different button
+		if (audio.src.includes("assets/music/" + e.target.id + ".mp3")) {
+			audio_playing = false;
+			document.getElementById(e.target.id).src = "assets/dashboard/music-button-pause.png"; 
+		}
+		else {
+			document.getElementById(audio_playing_id).src = "assets/dashboard/music-button-pause.png"; 
+			audio = new Audio("assets/music/" + e.target.id + ".mp3");
+			audio.play();
+			audio_playing = true
+			audio_playing_id = e.target.id
+			document.getElementById(e.target.id).src = "assets/dashboard/music-button-play.png"; 
+		}
+	}
+}
+
+// Add click events to the music buttons (with pure JS...)
+var music_buttons = document.getElementsByClassName("music-button");
+for (var i = 0; i < music_buttons.length; i++) {
+    music_buttons[i].addEventListener('click', play_music, false);
+}
+
 var old_cam_position = ""
 var intersects
-
 var dashboard = document.getElementById("dash-text");
 var dash_coordinates = document.getElementById("dash-coordinates");
 

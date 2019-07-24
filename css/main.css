@@ -1,8 +1,8 @@
 * {
-		margin: 0;
-		padding: 0;
-		overflow:hidden;
-	}
+	margin: 0;
+	padding: 0;
+	overflow:hidden;
+}
 
 /* Tooltip */
 #tooltip {
@@ -14,21 +14,15 @@
 	z-index: 1000;
 	width: auto;
 	height: auto;
-
 	max-width: 500px;
-
 	pointer-events: none;
-
 	border: solid 4px white;
 	color: white;
 	background-color: rgb(27, 27, 27);
-
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
-
 	transition: opacity .15s linear;
-
-	font-family: 'Roboto Mono', monospace;
+	font-family: "Roboto Mono", monospace;
 	box-sizing: border-box;
 	font-size: 15px;
 }
@@ -55,7 +49,7 @@
 
 h1 {
 	font-size: 25px;
-	font-family: 'Roboto Mono', monospace;
+	font-family: "Roboto Mono", monospace;
 	font-weight: bold;
 }
 
@@ -68,7 +62,7 @@ img {
 }
 
 #dashboard-top {
-	background-image: url('../assets/dashboard/dashboard-top.png');
+	background-image: url("../assets/dashboard/dashboard-top.png");
 	background-size: 100% 100%;
 	position: absolute;
 	top: 0px;
@@ -79,7 +73,7 @@ img {
 }
 
 #dashboard {
-	background-image: url('../assets/dashboard/dashboard.png');
+	background-image: url("../assets/dashboard/dashboard.png");
 	background-size: 100% 100%;
 	position: absolute;
 	bottom: 0px;
@@ -98,6 +92,21 @@ img {
 	transform: rotateX(50deg);
 	text-align: center;
 	color: #9eaa9a;
-	font-family: 'Courier', sans-serif;
+	font-family: "Roboto Mono", sans-serif;
 	font-size: 20px;
+}
+
+#music-buttons {
+	margin: 0 auto;
+	max-width: 200px;
+	text-align: center;
+	margin-top: 30px;
+	perspective: 1000px;
+	transform: rotateX(-50deg);
+}
+
+#music-buttons img {
+	display: inline-block;
+	padding: 4px;
+	cursor: pointer;
 }
