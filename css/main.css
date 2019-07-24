@@ -4,6 +4,10 @@
 	overflow:hidden;
 }
 
+.hidden {
+	display: none;
+}
+
 /* Tooltip */
 #tooltip {
 	opacity: 0;
@@ -17,7 +21,7 @@
 	max-width: 500px;
 	pointer-events: none;
 	border: solid 4px white;
-	color: white;
+	color: #9eaa9a;
 	background-color: rgb(27, 27, 27);
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
@@ -87,9 +91,9 @@ img {
 
 #dashboard-coordinates {
 	position: absolute;
-	bottom: 2.5vh;
+	bottom: 2.2vh;
 	width: 100%;
-	transform: rotateX(50deg);
+	transform: rotateX(60deg);
 	text-align: center;
 	color: #9eaa9a;
 	font-family: "Roboto Mono", sans-serif;
@@ -109,4 +113,61 @@ img {
 	display: inline-block;
 	padding: 4px;
 	cursor: pointer;
+}
+
+#explanation {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 100;
+	transform: translate(-50%, -50%);
+	max-width: 700px;
+	max-height: 700px;
+	overflow-y: scroll;
+	padding: 20px;
+	color: #9eaa9a;
+	font-family: "Roboto Mono", sans-serif;
+	background-color: rgb(27, 27, 27);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	transition: opacity .15s linear;
+	border: solid 4px white;
+}
+
+#explanation p {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 13px;
+}
+
+#explanation a {
+	color: #9ac9db;
+}
+
+#explanation ul {
+	font-size: 13px;
+}
+
+#explanation ul li {
+	list-style-type: auto;
+}
+
+#explanation-close {
+	position: absolute;
+	right: 10px;
+	top: 5px;
+	padding: 10px;
+	cursor: pointer;
+}
+
+#explanation-open {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	padding: 15px;
+	cursor: pointer;
+	transform: rotateX(-50deg);
+	color: #9eaa9a;
+	font-family: "Roboto Mono", sans-serif;
+	font-size: 20px;
 }

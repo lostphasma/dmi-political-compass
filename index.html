@@ -1,41 +1,63 @@
 <html>
 
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <title>Political Compass - DMI Summer School 2019</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<title>Political Space</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <script src="js/three.min.js"></script>
-    <script src='js/threex.linkify.js'></script>
-    <script src='js/threex.domevents.js'></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://threejs.org/examples/js/controls/FirstPersonControls.js"></script>
-    <script src="https://threejs.org/examples/js/controls/PointerLockControls.js"></script>
-    <script src="js/particleEngine.js"></script>
-    <script src="js/data.js"></script>
-    <script src="js/space_junk.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="js/three.min.js"></script>
+	<script src='js/threex.linkify.js'></script>
+	<script src='js/threex.domevents.js'></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="https://threejs.org/examples/js/controls/FirstPersonControls.js"></script>
+	<script src="https://threejs.org/examples/js/controls/PointerLockControls.js"></script>
+	<script src="js/particleEngine.js"></script>
+	<script src="js/data.js"></script>
+	<script src="js/space_junk.js"></script>
 </head>
 
 <body>
-    <div id="canvas"></div>
-    
-    <div id="dashboard-top">
-        <div id="music-buttons">
-            <img class="music-button" id="track-1" src="assets/dashboard/music-button-pause.png">
-            <img class="music-button" id="track-2" src="assets/dashboard/music-button-pause.png">
-            <img class="music-button" id="track-3" src="assets/dashboard/music-button-pause.png">
-        </div>
-    </div>
-    <div id="dashboard">
-        <div id="dashboard-coordinates">
-            <p id="dash-coordinates">Coordinates:</p>
-            <p id="dash-text">Calculating...</p>
-        </div>
-    </div>
+	<div id="canvas"></div>
+	
+	<div id="dashboard-top">
+		<div id="explanation">
+			<span id="explanation-close">X</span>
+			<h1>Political Space: Mapping Memetic Tribes</h1>
+			<p>An interactive application that lets one explore the ideological positioning of <a href="https://medium.com/s/world-wide-wtf/memetic-tribes-and-culture-war-2-0-14705c43f6bb">memetic tribes</a> across three axes.</p>
+			<p>Click to go forwards, right-click to go backwards. Hover over the tribe planets to see their information. Click on the planets to see further explanation. Planet are sized according to the amount of comments on their related subreddits.</p>
+			<p>Development is ongoing - suggestions can be emailed to <a href="mailto:sal@oilab.eu">sal@oilab.eu</a>.</p>
+			<hr>
+			<p>An initiative by <a href="https://oilab.eu">OILab</a></p>
+			<p>Developed by Sal Hagen, Eleonora Carpuccio, and Nicola Brignoli</p>
+			<p>Classification by Emilija Jokubauskaite, Jack Wilson, Anthony Burton, Hayley Beaman, Carmen Ferri, and Simon Copland</p>
+			<p>Music:
+				<ul>
+					<li>Bag Raiders - Shooting Stars, © 2011 Modular Recordings</li>
+					<li>Telstar - The Tornadoes, © 2014 Secret Records</li>
+					<li>Young Fathers - Romance © 2016 Big Dada</li>
+					<li>Mass Effect 2 - Galaxy Map Music © 2010 Electronic Arts Music</li>
+				</ul>
+			</p>
+			<p>This website claims no rights to any of the assets used.</p>
+		</div>
+		<div id="explanation-open"> ? </div>
+		<div id="music-buttons">
+			<img class="music-button" id="track-1.mp3" src="assets/dashboard/music-button-pause.png">
+			<img class="music-button" id="track-2.mp3" src="assets/dashboard/music-button-pause.png">
+			<img class="music-button" id="track-3.mp3" src="assets/dashboard/music-button-pause.png">
+			<img class="music-button" id="track-4.ogg" src="assets/dashboard/music-button-pause.png">
+		</div>
+	</div>
+	<div id="dashboard">
+		<div id="dashboard-coordinates">
+			<p id="dash-coordinates">Coordinates:</p>
+			<p id="dash-text">Calculating...</p>
+		</div>
+	</div>
 
-    <script src="js/tooltip.js"></script>  
-    <script src="js/main.js"></script>
-    <script src="js/particles.js"></script>
+	<script src="js/tooltip.js"></script>  
+	<script src="js/main.js"></script>
+	<script src="js/particles.js"></script>
 
 </body>

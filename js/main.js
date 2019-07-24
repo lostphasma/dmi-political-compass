@@ -16,7 +16,7 @@ var renderer = new THREE.WebGLRenderer({
 document.querySelector('#canvas').appendChild(renderer.domElement);
 
 // add domEvents like behaviour
-var domEvents = new THREEx.DomEvents(camera, renderer.domElement)
+var domEvents = new THREEx.DomEvents(camera, renderer.domElement);
 
 // Lighting
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -49,10 +49,10 @@ function init_geometry(e) {
 	];
 	
 	// Add the names of the box corners to the universe    
-	var corner_names = ["dank", "anarchist", "left", "normie", "authoritarian", "right"]
+	var corner_names = ["dank", "anarchist", "left", "normie", "authoritarian", "right"];
 
 	// Add edge texts
-	var edge_positions = [[-100,0,0],[0,-100,0],[0,0,-100],[100,0,0],[0,100,0],[0,0,100]]
+	var edge_positions = [[-100,0,0],[0,-100,0],[0,0,-100],[100,0,0],[0,100,0],[0,0,100]];
 	for (i = 0; i < 6; i++) {
 		var map = new THREE.TextureLoader().load("assets/edge_fonts/" + corner_names[i] + ".png");
 		var material = new THREE.SpriteMaterial( { map: map, color: 0xffffff } );
@@ -64,9 +64,10 @@ function init_geometry(e) {
 
 	var boxDimensions = .2;
 
-	// Ellen
+	// Put Ellen in the centre of the universe
 	var texture = new THREE.TextureLoader().load('assets/ellen.png');
-	var origin = new THREE.SphereGeometry(boxDimensions, boxDimensions, boxDimensions);
+
+	var origin = new THREE.SphereGeometry(150, 50, 50);
 	var material = new THREE.MeshLambertMaterial( { map: texture } );
 	var sph = new THREE.Mesh(origin, material);
 	sph.position.x = 0;
@@ -81,10 +82,10 @@ function init_geometry(e) {
 		var map = new THREE.TextureLoader().load("assets/space_junk/fixed/" + space_junk[i].filename);
 		var material = new THREE.SpriteMaterial( { map: map, color: 0xffffff } );
 		var sprite = new THREE.Sprite( material );
-		// Set scalle
+		// Set scale
 		sprite.scale.set(space_junk[i].size, space_junk[i].size*.75, 1);
 		// Set position
-		sprite.position.set(space_junk[i].x, space_junk[i].y, space_junk[i].z)
+		sprite.position.set(space_junk[i].x, space_junk[i].y, space_junk[i].z);
 		scene.add(sprite);
 		//console.log("adding assets/space_junk/fixed/" + space_junk[i].filename)
 	}
@@ -96,8 +97,8 @@ function init_geometry(e) {
 		var material = new THREE.SpriteMaterial( { map: map, color: 0xffffff } );
 		var sprite = new THREE.Sprite( material );
 
-		max = 100
-		min = -100
+		max = 100;
+		min = -100;
 
 		x = Math.floor(Math.random() * (+max - +min) + +min) * 5;
 		y = Math.floor(Math.random() * (+max - +min) + +min) * 5;
@@ -105,7 +106,7 @@ function init_geometry(e) {
 		
 		sprite.scale.set(50, 50*.75, 1);
 		
-		sprite.position.set(x, y, z)
+		sprite.position.set(x, y, z);
 		scene.add(sprite);
 	}
 
@@ -129,7 +130,7 @@ function init_geometry(e) {
 
 		// Size the planets on subreddit comments
 		var planet_diameter = ((geometries[i].subreddit_comments / 40397013) * 100) / 5
-		// Shouldn't be too small
+		// Planet diametres shouldn't be too small
 		if (planet_diameter < 1) { planet_diameter = 1}
 
 		var geometry = new THREE.SphereGeometry(planet_diameter, 50, 50);
@@ -154,19 +155,18 @@ function init_geometry(e) {
 	for (i = 0; i < spheres.length; i++) {
 
 		var url = geometries[i].url;
-		var linkify	= THREEx.Linkify(domEvents, spheres[i], url, false)
-
+		var linkify	= THREEx.Linkify(domEvents, spheres[i], url, false);
 		var counter = i;
 
 		(function (i) {
-			var title = geometries[i].title
+			var title = geometries[i].title;
 			var content = geometries[i].content;
 			var img = geometries[i].imageName;
 			var coordinate_text = get_coordinate_text(geometries[i].x, geometries[i].y, geometries[i].z);
 			var coordinates = geometries[i].x + "," + geometries[i].y + "," + geometries[i].z;
-			var subreddits = geometries[i].subreddit
-			var subreddit_count = geometries[i].subreddit_comments
-			var ur_text = geometries[i].ur_text
+			var subreddits = geometries[i].subreddit;
+			var subreddit_count = geometries[i].subreddit_comments;
+			var ur_text = geometries[i].ur_text;
 
 			domEvents.addEventListener(spheres[i], 'mouseover', function(e){
 
@@ -177,12 +177,12 @@ function init_geometry(e) {
 				// Add characteristics
 				tooltip_content += "<hr><p class='characteristics'>" + coordinate_text + "</p>";
 				// Add the planetary coordinates
-				tooltip_content += "<br><div class='planet-coordinates'><p>Celestial body located at coordinates " + coordinates + "</p></div><hr>"
+				tooltip_content += "<br><div class='planet-coordinates'><p>Celestial body located at coordinates " + coordinates + "</p></div><hr>";
 				// Add image
 				tooltip_content += "<img src='assets/planet_textures/" + img + "'>";
-				tooltip_content += "<br><div><p>Subreddit(s): " + subreddits + " (" + subreddit_count + " comments)</p></div>"
+				tooltip_content += "<br><div><p>Subreddit(s): " + subreddits + " (" + subreddit_count + " comments)</p></div>";
 				if (ur_text.length > 0) {
-					tooltip_content += "<br><div><p>Ur-text: " + ur_text + "</p></div>"
+					tooltip_content += "<br><div><p>Ur-text: " + ur_text + "</p></div>";
 				}
 
 				tooltip.innerHTML = tooltip_content
@@ -243,12 +243,12 @@ function get_coordinate_text(x, y, z) {
 		}
 	}
 
-	return text
+	return text;
 }
 
-var audio
-var audio_playing = false
-var audio_playing_id = ""
+var audio;
+var audio_playing = false;
+var audio_playing_id = "";
 
 function play_music(e) {
 	/* Function to start and stop music with the dashboard buttons */
@@ -257,11 +257,11 @@ function play_music(e) {
 
 	// If there's no audio playing, simply start a new track
 	if (audio_playing == false) {
-		audio = new Audio("assets/music/" + e.target.id + ".mp3");
+		audio = new Audio("assets/music/" + e.target.id);
 		audio.play();
-		audio_playing_id = e.target.id
+		audio_playing_id = e.target.id;
 		document.getElementById(e.target.id).src = "assets/dashboard/music-button-play.png"; 
-		audio_playing = true
+		audio_playing = true;
 	}
 
 	// Stop the already playing track if a button is pressed
@@ -270,16 +270,16 @@ function play_music(e) {
 		audio.pause();
 
 		// Only play a new track if it's a different button
-		if (audio.src.includes("assets/music/" + e.target.id + ".mp3")) {
+		if (audio.src.includes("assets/music/" + e.target.id)) {
 			audio_playing = false;
 			document.getElementById(e.target.id).src = "assets/dashboard/music-button-pause.png"; 
 		}
 		else {
 			document.getElementById(audio_playing_id).src = "assets/dashboard/music-button-pause.png"; 
-			audio = new Audio("assets/music/" + e.target.id + ".mp3");
+			audio = new Audio("assets/music/" + e.target.id);
 			audio.play();
-			audio_playing = true
-			audio_playing_id = e.target.id
+			audio_playing = true;
+			audio_playing_id = e.target.id;
 			document.getElementById(e.target.id).src = "assets/dashboard/music-button-play.png"; 
 		}
 	}
@@ -288,11 +288,22 @@ function play_music(e) {
 // Add click events to the music buttons (with pure JS...)
 var music_buttons = document.getElementsByClassName("music-button");
 for (var i = 0; i < music_buttons.length; i++) {
-    music_buttons[i].addEventListener('click', play_music, false);
+    music_buttons[i].addEventListener("click", play_music, false);
 }
 
-var old_cam_position = ""
-var intersects
+// Close and open the explanation popup
+var explanation_close = document.getElementById("explanation-close");
+var explanation_open = document.getElementById("explanation-open");
+var explanation = document.getElementById("explanation");
+function toggle_explanation(e) {
+	explanation.classList.toggle("hidden");
+}
+explanation_close.addEventListener("click", toggle_explanation);
+explanation_open.addEventListener("click", toggle_explanation);
+
+
+var old_cam_position = "";
+var intersects;
 var dashboard = document.getElementById("dash-text");
 var dash_coordinates = document.getElementById("dash-coordinates");
 
